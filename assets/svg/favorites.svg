@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="24px" viewBox="0 0 18 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>favorites</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Mobile-Empty" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-324.000000, -42.000000)">
+        <g id="Mobile---Empty" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="app-bar">
+                <path d="M324,66 L324,44.25 C324,43.0073437 325.007344,42 326.25,42 L339.75,42 C340.992656,42 342,43.0073437 342,44.25 L342,66 L333,60.75 L324,66 Z" id="favorites"></path>
+            </g>
+        </g>
+    </g>
+</svg>

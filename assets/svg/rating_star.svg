@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="19px" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>star</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-472.000000, -410.000000)">
+        <g fill="#FF4081" id="movie-list">
+            <g transform="translate(54.000000, 132.000000)">
+                <g id="movie" transform="translate(0.000000, 259.000000)">
+                    <g id="rating" transform="translate(386.000000, 18.000000)">
+                        <polygon id="star" points="48.18 20 46.545 12.971 52 8.244 44.809 7.627 42 1 39.191 7.627 32 8.244 37.455 12.971 35.82 20 42 16.272"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

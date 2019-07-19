@@ -1,0 +1,15 @@
+query allMoviesByGenre {
+  allMovies(genre: "Science Fiction", limit: 10, offset:0) {
+    metadata {
+      limit
+      total
+      offset
+    }
+    data {
+      id
+      title
+      releaseYear
+      tagline
+    }
+  }
+}

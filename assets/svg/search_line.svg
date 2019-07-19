@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="450px" height="2px" viewBox="0 0 450 2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>line</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-54.000000, -102.000000)">
+        <g id="search-bar" stroke="#80CBC4" stroke-width="2">
+            <g transform="translate(54.000000, 63.000000)">
+                <g id="search">
+                    <path d="M-9.11125279e-16,40 L450,40" id="line"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

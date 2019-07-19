@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="43px" height="57px" viewBox="0 0 43 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>bookmark</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Mobile---Search" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-190.000000, -147.000000)">
+        <g id="movie-list">
+            <g transform="translate(15.000000, 145.000000)">
+                <g id="movie" transform="translate(175.000000, 2.000000)">
+                    <g id="bookmark---selected">
+                        <g id="bookmark">
+                            <path d="M0,57 L0,5.34375 C0,2.39244141 2.40643229,0 5.375,0 L37.625,0 C40.5935677,0 43,2.39244141 43,5.34375 L43,57 L21.5,44.53125 L0,57 Z" id="Shape" fill-opacity="0.699999988" fill="#80CBC4" fill-rule="nonzero"></path>
+                            <g id="add" transform="translate(6.000000, 8.000000)"></g>
+                            <g id="minus" opacity="0.54" transform="translate(13.000000, 23.000000)" fill="#000000" fill-rule="nonzero">
+                                <path d="M16.0892857,3 C16.5939732,3 17,2.74196141 17,2.42122186 L17,0.578778135 C17,0.258038585 16.5939732,0 16.0892857,0 L0.910714286,0 C0.406026786,0 0,0.258038585 0,0.578778135 L0,2.42122186 C0,2.74196141 0.406026786,3 0.910714286,3 L16.0892857,3 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

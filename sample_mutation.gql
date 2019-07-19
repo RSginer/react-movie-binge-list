@@ -1,0 +1,5 @@
+mutation {
+  addFavorite(movieId: 68718) {
+    title
+  }
+}
