@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { types } from '../../actions/types';
 
+import { withRouter } from 'react-router-dom'
+
 export class Favorites extends Component {
 
   componentWillMount() {
@@ -34,5 +36,5 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Favorites));
 

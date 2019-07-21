@@ -5,6 +5,8 @@ import { gql } from "apollo-boost";
 
 import { types } from '../../actions/types';
 
+import { withRouter } from 'react-router-dom';
+
 const GET_ALL_MOVIES = gql`
 query allMoviesByGenre($genre: String!) {
   allMovies(genre: $genre, limit: 10, offset:0) {
@@ -68,4 +70,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Movies);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Movies));
