@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import Header from './components/header/header';
-import Movies from './container/movies/movies';
-import Favorites from './container/favorites/favorites';
+import Movies from './containers/movies/movies';
+import Favorites from './containers/favorites/favorites';
 
 import { Route } from "react-router-dom";
 import { ConnectedRouter } from 'connected-react-router'
