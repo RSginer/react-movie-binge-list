@@ -20,9 +20,19 @@ describe('Header Component', () => {
     expect(wrapper.length).toBe(1);
   })
 
-  it('Should say hello', () => {
-    const text = findByTestAttr(component, 'text');
-    expect(text.text()).toBe('Hello')
+  it('Should renders title', () => {
+    const text = findByTestAttr(component, 'title');
+    expect(text.text()).toBe('My Binge List')
+  })
+
+  it('Should renders back button', () => {
+    const backButton = findByTestAttr(component, 'backButton');
+    expect(backButton.length).toBe(1)
+  })
+
+  it('Should renders favorites button', () => {
+    const favoritesButton = findByTestAttr(component, 'favoritesButton');
+    expect(favoritesButton.length).toBe(1)
   })
 
 })
