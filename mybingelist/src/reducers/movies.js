@@ -1,4 +1,6 @@
 
-export default (state = [], action) => {
+export default (state = {
+  filter: 'Science Fiction',
+}, action) => {
   return state;
 }
