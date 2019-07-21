@@ -3,7 +3,7 @@ import './header.scss';
 
 const Header = (props) => {
   return (
-    <header data-test="header">
+    <header className="app-header" data-test="header">
       <div data-test="text">
         Hello
       </div>
