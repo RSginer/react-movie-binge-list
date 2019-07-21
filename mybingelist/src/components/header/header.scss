@@ -1,23 +1,25 @@
-.app-header {
+header.app-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 10px;
   background: #212121;
+  height: 35px;
   align-items: center;
-  .app-header__back-button-wrap {
+  position: relative;
 
-    .back-button {
-      
-    }
-
+  .app-header__back-button {
+    position: absolute;
+    left: 10px;
   }
 
   .app-header__title {
     font-size: 20px;
+    text-align: center;
   }
 
   .app-header__favorites-button {
-
+    position: absolute;
+    right: 10px;
     .favorites-button__icon {
       width: 22.5px;
     }
@@ -27,3 +29,4 @@
 
 
 }
+

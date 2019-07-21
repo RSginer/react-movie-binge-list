@@ -12,7 +12,7 @@ describe('Header Component', () => {
   let component;
 
   beforeEach(() => {
-    component =  shallow(<Header />);
+    component =  shallow(<Header showBackButton={true} showFavoritesButton={true} title="My Binge List"/>);
   });
 
   it('Should render', () => {
