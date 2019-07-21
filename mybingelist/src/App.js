@@ -4,8 +4,10 @@ import Header from './components/header/header';
 import Movies from './container/movies/movies';
 import Favorites from './container/favorites/favorites';
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
+import { ConnectedRouter } from 'connected-react-router'
 
+import {history} from './createStore';
 
 import './App.scss';
 
@@ -13,13 +15,13 @@ export class App extends Component {
 
   render() {
     return (
-      <Router>
+      <ConnectedRouter history={history}>
         <Header />
         <main className="main">
           <Route path="/" exact component={Movies} />
           <Route path="/favorites" component={Favorites} />
         </main>
-      </Router>
+      </ConnectedRouter>
     );
   }
 
