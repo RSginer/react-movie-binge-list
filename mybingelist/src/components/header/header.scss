@@ -1,8 +1,9 @@
 .app-header {
   display: flex;
   justify-content: space-between;
-  padding: 0 10px;
-
+  padding: 10px;
+  background: #212121;
+  align-items: center;
   .app-header__back-button-wrap {
 
     .back-button {
@@ -12,13 +13,13 @@
   }
 
   .app-header__title {
-
+    font-size: 20px;
   }
 
   .app-header__favorites-button {
 
     .favorites-button__icon {
-
+      width: 22.5px;
     }
   }
 
