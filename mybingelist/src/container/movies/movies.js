@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-
-import Header from '../../components/header/header';
 import { connect } from 'react-redux';
-
 import { Query } from "react-apollo";
 import { gql } from "apollo-boost";
+
+import { types } from '../../actions/types';
 
 const GET_ALL_MOVIES = gql`
 query allMoviesByGenre($genre: String!) {
@@ -25,19 +24,16 @@ query allMoviesByGenre($genre: String!) {
 
 export class Movies extends Component {
 
-  render() {
-    const headerProps = {
-      showBackButton: false,
-      showFavoritesButton: true,
-      title: 'My Binge List'
-    }
+  componentWillMount() {
+    this.props.setupHeader()
+  }
 
+  render() {
     return (
       <div>
-        <Header {...headerProps} />
         <Query
           query={GET_ALL_MOVIES}
-          variables={{genre: this.props.filter}}
+          variables={{ genre: this.props.filter }}
         >
           {({ loading, error, data }) => {
             if (loading) return <p>Loading...</p>;
@@ -54,10 +50,22 @@ export class Movies extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    filter: state.movies.filter
+    filter: state.movies.filter,
   }
 }
 
-export default connect(mapStateToProps)(Movies);;
+const mapDispatchToProps = dispatch => {
+  return {
+    setupHeader: () => dispatch({
+      type: types.SET_ROUTE,
+      payload: {
+        showBackButton: false,
+        showFavoritesButton: true
+      }
+    })
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Movies);

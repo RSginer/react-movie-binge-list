@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './header.scss';
 import { NavLink } from "react-router-dom";
 
@@ -8,32 +8,37 @@ import favoriesSVG from './../../assets/icons/favorites.svg';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { connect } from 'react-redux';
 
+export class Header extends Component {
 
-const Header = (props) => {
+  
 
-  const { title, showBackButton, showFavoritesButton } = props;
+  render() {
+    const { title, showBackButton, showFavoritesButton } = this.props;
+  
+    return (
+      <header className="app-header" data-test="header">
+        <div className="app-header__back-button">
+          {showBackButton &&
+            <NavLink to="/" data-test="backButton">
+              <FontAwesomeIcon icon={faArrowLeft} color="white" size="lg" />
+            </NavLink>}
+        </div>
+        <div className="app-header__title">
+          <span data-test="title">{title}</span>
+        </div>
+        <div className="app-header__favorites-button">
+          {showFavoritesButton &&
+            <NavLink to="/favorites">
+              <img data-test="favoritesButton" src={favoriesSVG} alt="favories" className="favorites-button__icon" />
+            </NavLink>
+          }
+        </div>
+      </header>
+    )
+  }
 
-  return (
-    <header className="app-header" data-test="header">
-      <div className="app-header__back-button">
-        {showBackButton &&
-          <NavLink to="/" data-test="backButton">
-            <FontAwesomeIcon icon={faArrowLeft} color="white" size="lg" />
-          </NavLink>}
-      </div>
-      <div className="app-header__title">
-        <span data-test="title">{title}</span>
-      </div>
-      <div className="app-header__favorites-button">
-        {showFavoritesButton &&
-          <NavLink to="/favorites">
-            <img data-test="favoritesButton" src={favoriesSVG} alt="favories" className="favorites-button__icon" />
-          </NavLink>
-        }
-      </div>
-    </header>
-  )
 }
 
 Header.propTypes = {
@@ -42,4 +47,12 @@ Header.propTypes = {
   title: PropTypes.string
 }
 
-export default Header;
+const mapStateToProps = state => {
+  return {
+    showBackButton: state.header.showBackButton,
+    showFavoritesButton: state.header.showFavoritesButton,
+    title: state.header.title
+  }
+}
+
+export default connect(mapStateToProps)(Header);

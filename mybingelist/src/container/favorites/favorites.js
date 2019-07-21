@@ -1,23 +1,38 @@
 import React, { Component } from 'react';
 
-import Header from '../../components/header/header';
+import { connect } from 'react-redux';
+import { types } from '../../actions/types';
 
 export class Favorites extends Component {
 
-  render() {
-    const headerProps = {
-      showBackButton: true,
-      showFavoritesButton: false,
-      title: 'My Binge List'
-    }
+  componentWillMount() {
+    this.props.setupHeader();
+  }
 
+  render() {
     return (
       <div>
-        <Header {...headerProps} />
         Favorites
       </div>
     )
   }
 }
 
-export default Favorites;
+const mapStateToProps = state => {
+  return {}
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setupHeader: () => dispatch({
+      type: types.SET_ROUTE,
+      payload: {
+        showBackButton: true,
+        showFavoritesButton: false
+      }
+    })
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
+
