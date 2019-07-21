@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from './components/header/header';
 
 import Movies from './container/movies/movies';
 import Favorites from './container/favorites/favorites';
