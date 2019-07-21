@@ -8,7 +8,7 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header showBackButton={false} showFavoritesButton={true} title="My Binge List" />
       </div>
     );
   }
