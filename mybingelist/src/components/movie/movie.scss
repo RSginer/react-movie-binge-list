@@ -11,10 +11,11 @@
     background-color: white;
     height: 345px;
     border-radius: 4px;
+
     .movie-thumbnail {
-    height: 345px;
-    width: 230px;
-  
+      height: 345px;
+      width: 230px;
+
       .movie-thumbnail__img {
         height: 345px;
         width: 230px;
@@ -31,11 +32,12 @@
       .movie-desc-wrap__header {
         .header__top {
           padding: 20px 0px;
-  
+
           .header__title-with-rating-wrap {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+
             .header__title {
               width: 305px;
               font-size: 35px;
@@ -43,7 +45,7 @@
               overflow: hidden;
               text-overflow: ellipsis;
             }
-  
+
             .header__rating {
               .rating-number {
                 font-size: 32px;
@@ -51,7 +53,7 @@
                 padding-right: 5px;
                 color: gray;
               }
-  
+
               .rating-icon {
                 width: 30px;
               }
@@ -62,6 +64,7 @@
             display: flex;
             justify-content: space-between;
             padding: 10px 0px;
+
             .yearWrap {
               .calendar-icon {
                 width: 18px;
@@ -75,13 +78,20 @@
 
             .genresWrap {
               .genres {
+                width: 250px;
+                font-size: 35px;
+                display: block;
+                text-align: right;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
                 font-size: 20px;
                 color: gray;
               }
             }
           }
         }
-       
+
       }
     }
   }
@@ -95,9 +105,10 @@
     display: none;
   }
 
-  .movie-container__wrap  {
-    height: calc(100% - 4px ) !important;
+  .movie-container__wrap {
+    height: calc(100% - 4px) !important;
   }
+
   .movie-thumbnail {
     width: 100% !important;
     height: auto !important;
