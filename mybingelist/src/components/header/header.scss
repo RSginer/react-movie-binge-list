@@ -9,17 +9,17 @@ header.app-header {
 
   .app-header__back-button {
     position: absolute;
-    left: 10px;
+    left: 30px;
   }
 
   .app-header__title {
-    font-size: 20px;
+    font-size: 22px;
     text-align: center;
   }
 
   .app-header__favorites-button {
     position: absolute;
-    right: 10px;
+    right: 30px;
     .favorites-button__icon {
       width: 22.5px;
     }

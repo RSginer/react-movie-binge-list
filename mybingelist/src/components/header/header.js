@@ -20,7 +20,7 @@ export class Header extends Component {
         <div className="app-header__back-button">
           {showBackButton &&
             <NavLink to="/" data-test="backButton">
-              <FontAwesomeIcon icon={faArrowLeft} color="white" size="lg" />
+              <FontAwesomeIcon icon={faArrowLeft} color="white" size="2x" />
             </NavLink>}
         </div>
         <div className="app-header__title">
