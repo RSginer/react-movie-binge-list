@@ -1,6 +1,6 @@
 
 export default (state = {
-  filter: 'Science Fiction',
+  filter: undefined,
 }, action) => {
   return state;
 }

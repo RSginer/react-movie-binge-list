@@ -5,7 +5,10 @@ import { gql } from "apollo-boost";
 
 import { types } from '../../actions/types';
 
+import './movies.scss';
+
 import { withRouter } from 'react-router-dom';
+import SearchForm from '../../components/searchForm/searchForm';
 
 export const GET_ALL_MOVIES = gql`
 query allMoviesByGenre($genre: String!) {
@@ -29,14 +32,28 @@ query allMoviesByGenre($genre: String!) {
 
 export class Movies extends Component {
 
+  state = {
+    searchInputValue: this.props.filter
+  }
+
   componentWillMount() {
     this.props.setupHeader()
+  }
+
+  onSearchSubmit = (e) => {
+    // TODO: dispatch change filter
+    console.log(this.state.searchInputValue)
+  }
+
+  onSearchInputChange = (e) => {
+    this.setState({searchInputValue: e.target.value});
   }
 
   render() {
     return (
       <div data-test="moviesComponent">
-        <Query
+        <SearchForm inputChange={this.onSearchInputChange} searchSubmit={this.onSearchSubmit} inputValue={this.state.searchInputValue} />
+        {this.props.filter && <Query
           query={GET_ALL_MOVIES}
           variables={{ genre: this.props.filter }}
         >
@@ -49,7 +66,12 @@ export class Movies extends Component {
               </div>
             ));
           }}
-        </Query>
+        </Query>}
+        {
+          !this.props.filter && <div className="empty-movie-list">
+            <p className="empty-movie-list__text">Please enter a genre to find movies e.g. Action</p>
+          </div>
+        }
       </div>
     )
   }

@@ -1,15 +1,33 @@
 .searchForm {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
   .searchForm__input-wrap {
-
+    margin-right: 20px;
+    width: 70%;
     .searchForm__input-wrap__input {
-
+      background: transparent;
+      border: none;
+      border-bottom: 4px solid #91c9c4;;
+      padding-bottom: 5px;
+      font-size: 20px;
+      color: gray;
+      outline: none;
+      width: 100%;
     }
   }
 
   .searchForm__submit {
 
     .searchForm__submit__button {
-
+      font-size: 20px;
+      background: transparent;
+      border: none;
+      text-transform: uppercase;
+      color: #92c8c4;
+      outline: none;
+      cursor: pointer;
     }
 
   }
