@@ -3,7 +3,7 @@ import Movie from './movie';
 import { findByTestAttr } from '../../../utils/test';
 import { shallow } from 'enzyme';
 
-describe('EmptyMessage Component', () => {
+describe('Movie Component', () => {
   let component;
 
   beforeEach(() => {
