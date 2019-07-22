@@ -1,6 +1,6 @@
 import React from 'react';
 import Movie from './movie';
-import { findByTestAttr } from './../../../utils/test';
+import { findByTestAttr } from '../../../utils/test';
 import { shallow } from 'enzyme';
 
 describe('EmptyMessage Component', () => {
