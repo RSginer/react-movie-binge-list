@@ -61,7 +61,7 @@ export class Movies extends Component {
           {({ loading, error, data }) => {
             if (loading) return <p data-test="loading">Loading...</p>;
             if (error) return <p>Error :(</p>;
-              if (!data || !data.allMovies) return <EmptyMessage />
+            if (!data || !data.allMovies) return <EmptyMessage />
             return data.allMovies.data.map(({ id, title }) => (
               <div data-test="movieItem" key={id}>
                 <p data-test="movieTitle">{title}</p>
