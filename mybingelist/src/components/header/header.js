@@ -12,8 +12,6 @@ import { connect } from 'react-redux';
 
 export class Header extends Component {
 
-  
-
   render() {
     const { title, showBackButton, showFavoritesButton } = this.props;
   

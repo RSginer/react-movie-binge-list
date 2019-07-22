@@ -2,6 +2,20 @@ import React from 'react';
 import Header from './header';
 import { shallow } from 'enzyme';
 
+import { createBrowserHistory } from 'history';
+import { routerMiddleware } from 'connected-react-router';
+
+import { applyMiddleware, createStore } from 'redux';
+
+import rootReducer from './../../reducers';
+
+export const history = createBrowserHistory()
+
+export const testStore = (initialState) => {
+  const createStoreWithMiddleware = applyMiddleware(routerMiddleware(history))(createStore);
+  return createStoreWithMiddleware(rootReducer(history), initialState);
+};
+
 const findByTestAttr = (component, attr) => {
   const wrapper = component.find(`[data-test="${attr}"]`);
   return wrapper;
@@ -12,7 +26,14 @@ describe('Header Component', () => {
   let component;
 
   beforeEach(() => {
-    component =  shallow(<Header showBackButton={true} showFavoritesButton={true} title="My Binge List"/>);
+    const store = testStore({
+      header: {
+        showBackButton: true,
+        showFavoritesButton: true,
+        title: 'My Binge List'
+      }
+    })
+    component =  shallow(<Header store={store}/>).childAt(0).dive();
   });
 
   it('Should render', () => {
