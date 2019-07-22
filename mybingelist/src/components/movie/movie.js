@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ratingStar from './../../assets/icons/rating_star.svg';
+import adoveMedianStar from './../../assets/icons/above_median_star.svg';
 import calendar from './../../assets/icons/calendar_icon.svg';
 import './movie.scss';
 
@@ -43,7 +44,8 @@ const Movie = (props) => {
             </div>
           </div>
           <div className="movie-desc-wrap__footer">
-
+              <img className="footer__star-icon" src={adoveMedianStar} alt="Median Star" />
+              <button className="footer__button">More info</button>
           </div>
         </div>
       </div>

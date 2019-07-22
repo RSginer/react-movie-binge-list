@@ -104,6 +104,26 @@
           line-height: 1.6;
         }
       }
+
+      .movie-desc-wrap__footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 2px 0px;
+        .footer__star-icon {
+          display: block;
+          width: 58px;
+        }
+
+        .footer__button {
+          font-size: 20px;
+          background: transparent;
+          border: none;
+          text-transform: uppercase;
+          color: #419488;;
+          outline: none;
+          cursor: pointer;
+        }
+      }
     }
   }
 }
