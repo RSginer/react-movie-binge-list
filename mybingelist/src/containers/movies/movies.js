@@ -65,7 +65,7 @@ export class Movies extends Component {
             if (!data || !data.allMovies) return <EmptyMessage />
             return (
             <div className="movies-container__movies-list">
-              {data.allMovies.data.map(({ id, title }) => <Movie key={id} title={title} />)}
+              {data.allMovies.data.map((movie) => <Movie key={movie.id} {...movie} />)}
             </div>
             );
           }}
