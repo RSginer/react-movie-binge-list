@@ -71,7 +71,7 @@ describe('Header Component', () => {
       expect(backButton.length).toBe(1)
     })
 
-    it('Should renders favorites button', () => {
+    it('Should NOT renders favorites button', () => {
       const favoritesButton = findByTestAttr(component, 'favoritesButton');
       expect(favoritesButton.length).toBe(0)
     })
@@ -102,7 +102,7 @@ describe('Header Component', () => {
       expect(text.text()).toBe('My Binge List')
     })
 
-    it('Should renders back button', () => {
+    it('Should NOT renders back button', () => {
       const backButton = findByTestAttr(component, 'backButton');
       expect(backButton.length).toBe(0)
     })
