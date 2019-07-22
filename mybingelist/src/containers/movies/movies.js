@@ -65,9 +65,9 @@ export class Movies extends Component {
             if (error) return <ServerError genre={this.state.searchInputValue} message={error.message} />;
             if (!data || !data.allMovies) return <EmptyMessage />
             return (
-            <div className="movies-container__movies-list">
-              {data.allMovies.data.map((movie) => <Movie key={movie.id} {...movie} />)}
-            </div>
+              <div className="movies-container__movies-list">
+                {data.allMovies.data.map((movie) => <Movie key={movie.id} {...movie} />)}
+              </div>
             );
           }}
         </Query>}
