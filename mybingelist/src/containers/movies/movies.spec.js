@@ -45,15 +45,15 @@ describe('Movies Component', () => {
       })
       component = mount(
         <MockedProvider mocks={mocks} addTypename={false}>
-          <Movies.WrappedComponent store={store} setupHeader={() => {}} />
+          <Movies.WrappedComponent store={store} setupHeader={() => { }} />
         </MockedProvider>);
     });
-  
+
     it('Should render', () => {
       const wrapper = findByTestAttr(component, 'moviesComponent');
       expect(wrapper.length).toBe(1);
     });
-  
+
     it('Should render loading state', async () => {
       const loading = findByTestAttr(component, 'loading');
       expect(loading.length).toBe(1);
@@ -61,4 +61,4 @@ describe('Movies Component', () => {
 
   });
 
-})
+});
