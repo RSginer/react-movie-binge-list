@@ -38,7 +38,9 @@ const Movie = (props) => {
 
           </div>
           <div className="movie-desc-wrap__body">
-            <p>{props.overview}</p>
+            <div className="body__desc">
+            <p>{props.overview.substring(0, 120)}{props.overview.length > 120 ? '...' : undefined}</p>
+            </div>
           </div>
           <div className="movie-desc-wrap__footer">
 

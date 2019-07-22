@@ -94,6 +94,15 @@
         }
 
       }
+
+      .movie-desc-wrap__body {
+        .body__desc {
+          font-size: 20px;
+          overflow: hidden;
+          text-transform: ellipsis;
+          line-height: 1.6;
+        }
+      }
     }
   }
 }
