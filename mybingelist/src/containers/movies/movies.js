@@ -18,7 +18,10 @@ query allMoviesByGenre($genre: String!) {
     data {
       id
       title
-      releaseYear
+      releaseYear,
+      poster(size: MEDIUM) {
+        fullPath,
+      },
       tagline
     }
   }
