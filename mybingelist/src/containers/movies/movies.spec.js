@@ -45,7 +45,7 @@ describe('Movies Component', () => {
       })
       component = mount(
         <MockedProvider mocks={mocks} addTypename={false}>
-          <Movies.WrappedComponent store={store} setupHeader={() => { }} />
+          <Movies.WrappedComponent store={store} filter={filter} setupHeader={() => { }} />
         </MockedProvider>);
     });
 
@@ -57,6 +57,33 @@ describe('Movies Component', () => {
     it('Should render loading state', async () => {
       const loading = findByTestAttr(component, 'loading');
       expect(loading.length).toBe(1);
+    });
+
+  });
+
+  describe('Show empty message if not filter exist', () => {
+    let component;
+
+    beforeEach(() => {
+      const store = testStore({
+        movies: {
+          filter: undefined
+        }
+      })
+      component = mount(
+        <MockedProvider mocks={mocks} addTypename={false}>
+          <Movies.WrappedComponent store={store} setupHeader={() => { }} />
+        </MockedProvider>);
+    });
+
+    it('Should render', () => {
+      const wrapper = findByTestAttr(component, 'moviesComponent');
+      expect(wrapper.length).toBe(1);
+    });
+
+    it('Should render the empty message', async () => {
+      const message = findByTestAttr(component, 'emptyText');
+      expect(message.length).toBe(1);
     });
 
   });

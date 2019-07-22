@@ -69,7 +69,7 @@ export class Movies extends Component {
         </Query>}
         {
           !this.props.filter && <div className="empty-movie-list">
-            <p className="empty-movie-list__text">Please enter a genre to find movies e.g. Action</p>
+            <p data-test="emptyText" className="empty-movie-list__text">Please enter a genre to find movies e.g. Action</p>
           </div>
         }
       </div>
