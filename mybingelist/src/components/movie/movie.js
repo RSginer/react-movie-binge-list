@@ -29,9 +29,9 @@ const Movie = (props) => {
                   <span className="releaseYear">{props.releaseYear}</span>
                 </div>
                 <div className="genresWrap">
-                  <span className="genres">{
-                    props.genres && props.genres.map((genre) => genre.name).join(',')
-                  }</span>
+                  <span className="genres"><i>{
+                    props.genres && props.genres.map((genre) => ' ' + genre.name).join(',')
+                  }</i></span>
                 </div>
               </div>
             </div>

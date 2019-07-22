@@ -59,9 +59,10 @@
           }
 
           .header__calendar-genres {
-
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0px;
             .yearWrap {
-              padding: 10px 0px;
               .calendar-icon {
                 width: 18px;
               }
@@ -69,6 +70,13 @@
               .releaseYear {
                 font-size: 20px;
                 margin-left: 6px;
+              }
+            }
+
+            .genresWrap {
+              .genres {
+                font-size: 20px;
+                color: gray;
               }
             }
           }
