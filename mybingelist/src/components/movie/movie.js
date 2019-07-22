@@ -4,7 +4,7 @@ import './movie.scss';
 
 const Movie = (props) => {
   return (
-    <div data-test="movieComponent">
+    <div className="movie-container" data-test="movieComponent">
       {props.title}
     </div>
   )

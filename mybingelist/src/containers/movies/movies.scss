@@ -6,5 +6,8 @@
 
   .movies-container__movies-list {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
   }
 }
