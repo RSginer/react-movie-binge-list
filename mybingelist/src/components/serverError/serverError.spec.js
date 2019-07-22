@@ -8,7 +8,7 @@ describe('ServerError Component', () => {
 
   beforeEach(() => {
 
-    component = shallow(<ServerError message="Test" />);
+    component = shallow(<ServerError message="Test" genre="Action" />);
   });
 
   it('Should render', () => {
