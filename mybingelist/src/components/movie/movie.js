@@ -36,7 +36,6 @@ const Movie = (props) => {
                 </div>
               </div>
             </div>
-
           </div>
           <div className="movie-desc-wrap__body">
             <div className="body__desc">
