@@ -9,6 +9,7 @@ import './movies.scss';
 
 import { withRouter } from 'react-router-dom';
 import SearchForm from '../../components/searchForm/searchForm';
+import EmptyMessage from '../../components/emptyMessage/emptyMessage';
 
 export const GET_ALL_MOVIES = gql`
 query allMoviesByGenre($genre: String!) {
@@ -42,7 +43,7 @@ export class Movies extends Component {
 
   onSearchSubmit = (e) => {
     // TODO: dispatch change filter
-    console.log(this.state.searchInputValue)
+    this.props.changeGenre(this.state.searchInputValue);
   }
 
   onSearchInputChange = (e) => {
@@ -60,6 +61,7 @@ export class Movies extends Component {
           {({ loading, error, data }) => {
             if (loading) return <p data-test="loading">Loading...</p>;
             if (error) return <p>Error :(</p>;
+              if (!data || !data.allMovies) return <EmptyMessage />
             return data.allMovies.data.map(({ id, title }) => (
               <div data-test="movieItem" key={id}>
                 <p data-test="movieTitle">{title}</p>
@@ -68,9 +70,7 @@ export class Movies extends Component {
           }}
         </Query>}
         {
-          !this.props.filter && <div className="empty-movie-list">
-            <p data-test="emptyText" className="empty-movie-list__text">Please enter a genre to find movies e.g. Action</p>
-          </div>
+          !this.props.filter && <EmptyMessage />
         }
       </section>
     )
@@ -91,6 +91,10 @@ const mapDispatchToProps = dispatch => {
         showBackButton: false,
         showFavoritesButton: true
       }
+    }),
+    changeGenre: (genre) => dispatch({
+      type: types.CHANGE_GENRE,
+      payload: genre
     })
   }
 }
