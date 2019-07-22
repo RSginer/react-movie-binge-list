@@ -36,7 +36,7 @@
           justify-content: space-between;
           padding: 20px 0px;
           .header__title {
-            width: 300px;
+            width: 305px;
             font-size: 35px;
             white-space: nowrap;
             overflow: hidden;
@@ -59,7 +59,24 @@
       }
     }
   }
- 
+}
 
+@media (max-width: 1469px) {
+  .movie-desc-wrap {
+    display: none;
+  }
 
+  .movie-container__wrap  {
+    height: calc(100% - 4px ) !important;
+  }
+  .movie-thumbnail {
+    width: 100% !important;
+    height: auto !important;
+
+    .movie-thumbnail__img {
+      width: 100% !important;
+      height: auto !important;
+    }
+
+  }
 }
