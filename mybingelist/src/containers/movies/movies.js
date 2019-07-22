@@ -63,7 +63,7 @@ export class Movies extends Component {
           {({ loading, error, data }) => {
             if (loading) return <p data-test="loading">Loading...</p>;
             if (error) return <ServerError genre={this.state.searchInputValue} message={error.message} />;
-            if (!data || !data.allMovies) return <EmptyMessage />
+            if (!data || !data.allMovies || !data.allMovies.data || data.allMovies.data.length < 1) return <EmptyMessage />
             return (
               <div className="movies-container__movies-list">
                 {data.allMovies.data.map((movie) => <Movie key={movie.id} {...movie} />)}
