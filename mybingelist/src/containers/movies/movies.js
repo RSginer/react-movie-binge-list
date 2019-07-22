@@ -61,7 +61,12 @@ export class Movies extends Component {
         >
           {({ loading, error, data }) => {
             if (loading) return <p data-test="loading">Loading...</p>;
-            if (error) return <p><span role="img" aria-label="cry">😭</span> Genre <u>{this.state.searchInputValue}</u> throws the following server error <i className="server-error-message">{error.message}</i></p>;
+            if (error) return (
+            <p>
+              <span role="img" aria-label="cry">😭</span> Genre <u>{this.state.searchInputValue}</u> 
+              throws the following server error 
+              <i className="server-error-message">{error.message}</i>
+            </p>);
             if (!data || !data.allMovies) return <EmptyMessage />
             return (
             <div className="movies-container__movies-list">
