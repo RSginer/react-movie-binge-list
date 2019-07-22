@@ -13,7 +13,7 @@
 
   }
 
-  .movies-container__movies-list *:nth-child(odd) {
+  .movies-container__movies-list > *:nth-child(odd) {
     padding-right: 20px;
   }
 }

@@ -11,7 +11,14 @@ const Movie = (props) => {
         </div>
         <div className="movie-desc-wrap">
           <div className="movie-desc-wrap__header">
-            {props.title}
+            <div className="header__title-with-rating-wrap">
+                <div className="header__title">
+                  <span>{props.title}</span>
+                </div>
+                <div className="header__rating">
+
+                </div>
+            </div>
           </div>
           <div className="movie-desc-wrap__body">
             

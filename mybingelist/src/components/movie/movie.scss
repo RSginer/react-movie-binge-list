@@ -26,6 +26,18 @@
     .movie-desc-wrap {
       width: 100%;
       color: #121212;
+      padding: 15px;
+
+      .movie-desc-wrap__header {
+
+        .header__title-with-rating-wrap {
+
+          .header__title {
+            font-size: 22px;
+          }
+        }
+
+      }
     }
   }
  
