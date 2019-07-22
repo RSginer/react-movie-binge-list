@@ -1,5 +1,31 @@
 .movie-container {
   display: flex;
   flex-direction: column;
-  flex-basis: 50%;
+  flex-basis: calc(50% - 20px);
+  margin-bottom: 20px;
+
+  .movie-container__wrap {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    height: 375px;
+    border-radius: 4px;
+    .movie-thumbnail {
+      width: 400px;
+  
+      .movie-thumbnail__img {
+        width: 100%;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+    }
+
+    .movie-desc-wrap {
+      width: 100%;
+      color: #121212;
+    }
+  }
+ 
+
+
 }

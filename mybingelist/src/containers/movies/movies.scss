@@ -10,5 +10,10 @@
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
+
+  }
+
+  .movies-container__movies-list *:nth-child(odd) {
+    padding-right: 20px;
   }
 }
