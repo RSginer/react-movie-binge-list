@@ -38,11 +38,11 @@ export class Movies extends Component {
           variables={{ genre: this.props.filter }}
         >
           {({ loading, error, data }) => {
-            if (loading) return <p>Loading...</p>;
+            if (loading) return <p data-test="loading">Loading...</p>;
             if (error) return <p>Error :(</p>;
             return data.allMovies.data.map(({ id, title }) => (
-              <div key={id}>
-                <p>{title}</p>
+              <div data-test="movieItem" key={id}>
+                <p data-test="movieTitle">{title}</p>
               </div>
             ));
           }}
