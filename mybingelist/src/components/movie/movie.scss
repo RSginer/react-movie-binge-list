@@ -29,38 +29,59 @@
       padding: 15px;
 
       .movie-desc-wrap__header {
-
-        .header__title-with-rating-wrap {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
+        .header__top {
           padding: 20px 0px;
-          .header__title {
-            width: 305px;
-            font-size: 35px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+  
+          .header__title-with-rating-wrap {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .header__title {
+              width: 305px;
+              font-size: 35px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+  
+            .header__rating {
+              .rating-number {
+                font-size: 32px;
+                line-height: 35px;
+                padding-right: 5px;
+                color: gray;
+              }
+  
+              .rating-icon {
+                width: 30px;
+              }
+            }
           }
 
-          .header__rating {
-            .rating-number {
-              font-size: 32px;
-              padding-right: 5px;
-              color: gray;
-            }
+          .header__calendar-genres {
 
-            .rating-icon {
-              width: 30px;
+            .yearWrap {
+              padding: 10px 0px;
+              .calendar-icon {
+                width: 18px;
+              }
+
+              .releaseYear {
+                font-size: 20px;
+                margin-left: 6px;
+              }
             }
           }
         }
-
+       
       }
     }
   }
 }
 
+/**
+  Responsive
+*/
 @media (max-width: 1469px) {
   .movie-desc-wrap {
     display: none;

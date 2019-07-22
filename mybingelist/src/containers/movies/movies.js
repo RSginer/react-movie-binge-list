@@ -27,6 +27,9 @@ query allMoviesByGenre($genre: String!) {
       title
       releaseYear
       overview
+      genres {
+        name
+      }
       poster(size: MEDIUM) {
         fullPath,
       },
