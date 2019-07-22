@@ -42,7 +42,6 @@ export class Movies extends Component {
   }
 
   onSearchSubmit = (e) => {
-    // TODO: dispatch change filter
     this.props.changeGenre(this.state.searchInputValue);
   }
 
