@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ratingStar from './../../assets/icons/rating_star.svg';
+
 import './movie.scss';
 
 const Movie = (props) => {
@@ -12,20 +14,21 @@ const Movie = (props) => {
         <div className="movie-desc-wrap">
           <div className="movie-desc-wrap__header">
             <div className="header__title-with-rating-wrap">
-                <div className="header__title">
-                  <span>{props.title}</span>
-                </div>
-                <div className="header__rating">
-
-                </div>
+              <div className="header__title">
+                {props.title}
+              </div>
+              <div className="header__rating">
+                <span className="rating-number">7.2</span>
+                <img className="rating-icon" src={ratingStar} alt="rating icon" />
+              </div>
             </div>
           </div>
           <div className="movie-desc-wrap__body">
-            
-            </div>
-            <div className="movie-desc-wrap__footer">
-            
-            </div>
+            <p>{props.overview}</p>
+          </div>
+          <div className="movie-desc-wrap__footer">
+
+          </div>
         </div>
       </div>
     </div>
