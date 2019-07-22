@@ -51,7 +51,7 @@ export class Movies extends Component {
 
   render() {
     return (
-      <div data-test="moviesComponent">
+      <section className="movies-container" data-test="moviesComponent">
         <SearchForm inputChange={this.onSearchInputChange} searchSubmit={this.onSearchSubmit} inputValue={this.state.searchInputValue} />
         {this.props.filter && <Query
           query={GET_ALL_MOVIES}
@@ -72,7 +72,7 @@ export class Movies extends Component {
             <p data-test="emptyText" className="empty-movie-list__text">Please enter a genre to find movies e.g. Action</p>
           </div>
         }
-      </div>
+      </section>
     )
   }
 }
