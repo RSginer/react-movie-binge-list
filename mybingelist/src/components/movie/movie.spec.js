@@ -8,7 +8,16 @@ describe('Movie Component', () => {
 
   beforeEach(() => {
 
-    component = shallow(<Movie />);
+    const props = {
+      title: 'Movie 1',
+      poster: {
+        fullPath: 'https://via.placeholder.com/230x345'
+      },
+      overview: 'Movie overview',
+      releaseYear: 2019
+    }
+
+    component = shallow(<Movie {...props} />);
   });
 
   it('Should render', () => {
