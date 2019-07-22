@@ -32,3 +32,9 @@
 
   }
 }
+
+@media (max-width: 720px) {
+  .searchForm__input-wrap {
+    width: 80% !important;
+  }
+}
