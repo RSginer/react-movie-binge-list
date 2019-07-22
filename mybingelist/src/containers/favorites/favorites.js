@@ -30,7 +30,8 @@ const mapDispatchToProps = dispatch => {
       type: types.SET_ROUTE,
       payload: {
         showBackButton: true,
-        showFavoritesButton: false
+        showFavoritesButton: false,
+        title: 'Favorite Movies'
       }
     })
   }

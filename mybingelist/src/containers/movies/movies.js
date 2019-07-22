@@ -91,7 +91,8 @@ const mapDispatchToProps = dispatch => {
       type: types.SET_ROUTE,
       payload: {
         showBackButton: false,
-        showFavoritesButton: true
+        showFavoritesButton: true,
+        title: 'My Binge List'
       }
     }),
     changeGenre: (genre) => dispatch({
