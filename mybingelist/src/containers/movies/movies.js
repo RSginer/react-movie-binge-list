@@ -7,7 +7,7 @@ import { types } from '../../actions/types';
 
 import { withRouter } from 'react-router-dom';
 
-const GET_ALL_MOVIES = gql`
+export const GET_ALL_MOVIES = gql`
 query allMoviesByGenre($genre: String!) {
   allMovies(genre: $genre, limit: 10, offset:0) {
     metadata {
@@ -32,7 +32,7 @@ export class Movies extends Component {
 
   render() {
     return (
-      <div>
+      <div data-test="moviesComponent">
         <Query
           query={GET_ALL_MOVIES}
           variables={{ genre: this.props.filter }}
