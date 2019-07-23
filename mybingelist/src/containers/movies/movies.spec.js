@@ -50,7 +50,7 @@ const mocks = [
     request: {
       query: GET_ALL_MOVIES,
       variables: {
-        genre: 'War',
+        genre: 'History',
       },
     },
     result: {
@@ -134,7 +134,7 @@ describe('Movies Component', () => {
 
     beforeEach(() => {
       const props = {
-        filter: 'War',
+        filter: 'History',
         medianRating: undefined,
         movies: moviesMock,
         loading: false,
