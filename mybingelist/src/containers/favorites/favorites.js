@@ -15,7 +15,10 @@ export class Favorites extends Component {
       showFavoritesButton: false,
       title: 'Favorite Movies'
     });
-    this.props.fetchFavorites();
+
+    if (!this.props.fetched) {
+      this.props.fetchFavorites();
+    }
   }
 
   removeFavorite = (id) => {
@@ -41,7 +44,8 @@ const mapStateToProps = state => {
   return {
     favorites: state.favorites.favorites,
     error: state.favorites.error,
-    loading: state.favorites.loading
+    loading: state.favorites.loading,
+    fetched: state.favorites.fetched
   }
 }
 
