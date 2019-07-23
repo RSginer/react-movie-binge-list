@@ -21,6 +21,7 @@ export class Movie extends Component {
       <div className="movie-container" data-test="movieComponent">
         <div className="movie-container__wrap">
           <div className="movie-thumbnail">
+            <div>{this.props.isFavorite && 'Yes!'}</div>
             <img className="movie-thumbnail__img" src={this.props.poster.fullPath} alt={`Thubnail of movie ${this.props.title}`} />
           </div>
           <div className="movie-desc-wrap">

@@ -37,6 +37,9 @@ query allMoviesByGenre($genre: String!) {
       tagline
     }
   }
+  favorites {
+    id
+  }
 }`;
 
 export class Movies extends Component {
@@ -73,14 +76,19 @@ export class Movies extends Component {
             if (loading) return <p data-test="loading">Loading...</p>;
             if (error) return <ServerError genre={this.state.searchInputValue} message={error.message} />;
             if (!data || !data.allMovies || !data.allMovies.data || data.allMovies.data.length < 1) return <EmptyMessage />;
-
             if (data && data.allMovies && data.allMovies.data.length > 0) {
               this.getMedian(data.allMovies.data);
             }
 
+            let favoriteIds = [];
+
+            if (data && data.favorites && data.favorites.length > 0) {
+              favoriteIds = data.favorites.map((f) => f.id);
+            }
+
             return (
               <div className="movies-container__movies-list">
-                {data.allMovies.data.map((movie) => <Movie key={movie.id} {...movie} medianRating={this.props.medianRating} />)}
+                {data.allMovies.data.map((movie) => <Movie key={movie.id} {...movie} isFavorite={favoriteIds.includes(movie.id)} medianRating={this.props.medianRating} />)}
               </div>
             );
           }}
