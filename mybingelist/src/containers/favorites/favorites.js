@@ -8,13 +8,13 @@ import Movie from './../../components/movie/movie';
 
 export class Favorites extends Component {
 
-  async componentWillMount() {
+  componentWillMount() {
     this.props.setupHeader({
       showBackButton: true,
       showFavoritesButton: false,
       title: 'Favorite Movies'
     });
-    await this.props.fetchFavorites();
+    this.props.fetchFavorites();
   }
 
   removeFavorite = (id) => {
