@@ -42,8 +42,8 @@ export class Movies extends Component {
     this.props.removeFavorite(id);
   }
 
-  addFavorite = (id) => {
-    this.props.addFavorite(id);
+  addFavorite = (movie) => {
+    this.props.addFavorite(movie);
   }
 
   render() {
@@ -56,7 +56,7 @@ export class Movies extends Component {
           <div className="movies-container__movies-list">
             {this.props.movies.map((movie) => <Movie 
             key={movie.id} 
-            {...movie} 
+            movie={movie}
             removeFavorite={this.removeFavorite} 
             addFavorite={this.addFavorite} 
             isFavorite={this.props.favoriteIds.includes(movie.id)} 

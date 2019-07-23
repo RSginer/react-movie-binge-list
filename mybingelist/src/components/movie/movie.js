@@ -26,14 +26,14 @@ export class Movie extends Component {
       <div className="movie-container" data-test="movieComponent">
         <div className="movie-container__wrap">
           <div className="movie-thumbnail">
-            <img className="movie-thumbnail__img" src={this.props.poster.fullPath} alt={`Thubnail of movie ${this.props.title}`} />
-            {this.props.medianRating < this.props.rating ? <img className="star-icon--mobile" src={adoveMedianStar} alt="Median Star" /> : undefined}
+            <img className="movie-thumbnail__img" src={this.props.movie.poster.fullPath} alt={`Thubnail of movie ${this.props.movie.title}`} />
+            {this.props.medianRating < this.props.movie.rating ? <img className="star-icon--mobile" src={adoveMedianStar} alt="Median Star" /> : undefined}
             {!this.props.isFavorite && <Mutation mutation={ADD_TO_FAVORITES}>
               {(addFavorite, { data }) => (
                 <button className="actionfavorites-icon" onClick={e => {
                   e.preventDefault();
-                  addFavorite({ variables: { movieId: this.props.id } })
-                  this.props.addFavorite(this.props.id)
+                  addFavorite({ variables: { movieId: this.props.movie.id } })
+                  this.props.addFavorite(this.props.movie)
                 }
                 }>
                   <img src={addFavoritesIcon} alt="Add favorites button" />
@@ -44,8 +44,8 @@ export class Movie extends Component {
               {(removeFavorite, { data }) => (
                 <button className="actionfavorites-icon" onClick={e => {
                   e.preventDefault();
-                  removeFavorite({ variables: { movieId: this.props.id } })
-                  this.props.removeFavorite(this.props.id)
+                  removeFavorite({ variables: { movieId: this.props.movie.id } })
+                  this.props.removeFavorite(this.props.movie.id)
                 }}>
                   <img src={removeFavoritesIcon} alt="Remove favorites button" />
                 </button>
@@ -57,31 +57,31 @@ export class Movie extends Component {
               <div className="header__top">
                 <div className="header__title-with-rating-wrap">
                   <div className="header__title">
-                    {this.props.title}
+                    {this.props.movie.title}
                   </div>
                   <div className="header__rating">
-                    <span className="rating-number">{this.props.rating}</span>
+                    <span className="rating-number">{this.props.movie.rating}</span>
                     <img className="rating-icon" src={ratingStar} alt="rating icon" />
                   </div>
                 </div>
                 <div className="header__calendar-genres">
                   <div className="yearWrap">
                     <img className="calendar-icon" width="15px" src={calendar} alt="calendar" />
-                    <span className="releaseYear">{this.props.releaseYear}</span>
+                    <span className="releaseYear">{this.props.movie.releaseYear}</span>
                   </div>
                   <div className="genresWrap">
-                    <span className="genres">{this.extractGenres(this.props.genres)}</span>
+                    <span className="genres">{this.extractGenres(this.props.movie.genres)}</span>
                   </div>
                 </div>
               </div>
             </div>
             <div className="movie-desc-wrap__body">
               <div className="body__desc">
-                <p>{this.extractDesc(this.props.overview)}</p>
+                <p>{this.extractDesc(this.props.movie.overview)}</p>
               </div>
             </div>
             <div className="movie-desc-wrap__footer">
-              {this.props.medianRating < this.props.rating ? <img className="footer__star-icon" src={adoveMedianStar} alt="Median Star" data-test="ratingStar" /> : <div className="footer__star-icon fake"></div>}
+              {this.props.medianRating < this.props.movie.rating ? <img className="footer__star-icon" src={adoveMedianStar} alt="Median Star" data-test="ratingStar" /> : <div className="footer__star-icon fake"></div>}
               <button className="footer__button">More info</button>
             </div>
           </div>

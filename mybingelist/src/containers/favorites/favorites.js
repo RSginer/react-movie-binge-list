@@ -14,7 +14,7 @@ export class Favorites extends Component {
       showFavoritesButton: false,
       title: 'Favorite Movies'
     });
-    this.props.fetchFavorites()
+    await this.props.fetchFavorites();
   }
 
   removeFavorite = (id) => {
@@ -26,8 +26,8 @@ export class Favorites extends Component {
       <div className="movies-container__movies-list">
         {this.props.favorites.map((f, i) => <Movie 
         key={i}
-        {...f} isFavorite={true} 
-        removeFavorite={this.removeFavorite} 
+        movie={f} isFavorite={true} 
+        removeFavorite={this.removeFavorite}
         />)}
       </div>
     )

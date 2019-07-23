@@ -33,8 +33,8 @@ export default (state = {
   }
 }
 
-function addFavorite(favoriteIds, id) {
-  return [...favoriteIds, id]
+function addFavorite(favoriteIds, movie) {
+  return [...favoriteIds, movie.id]
 }
 
 function removeFavorite(favoriteIds, id) {
