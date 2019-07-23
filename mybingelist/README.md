@@ -39,3 +39,9 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
+
+### Other dependencies used
+- [Connected Router](https://github.com/supasate/connected-react-router)
+- [Router DOM](https://reacttraining.com/react-router/web/guides/quick-start)
+- [Apollo Client](https://www.apollographql.com/docs/react/)
+- [FontAwesome](https://github.com/FortAwesome/react-fontawesome)
