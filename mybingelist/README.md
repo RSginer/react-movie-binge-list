@@ -1,6 +1,6 @@
 ## @RSginer - My Binge List
 
-- Note: Is my first webapp in React, I hope you like it and thanks for the opportunity.
+- Note: Is my first webapp in React I worked with React before but just in React Native, I hope you like it and thanks for the opportunity.
 
 ### `yarn run deploy` (prod mode) - Use this one to review the project
 
