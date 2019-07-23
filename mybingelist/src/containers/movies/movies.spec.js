@@ -6,28 +6,6 @@ import { MockedProvider } from 'react-apollo/test-utils';
 
 import { GET_ALL_MOVIES } from '../../actions/index';
 
-const mocks = [
-  {
-    request: {
-      query: GET_ALL_MOVIES,
-      variables: {
-        genre: 'War',
-      },
-    },
-    result: {
-      data: {
-        allMovies: {
-          data: [
-            { id: 1, title: 'Movie title 1' },
-            { id: 2, title: 'Movie title 2' },
-            { id: 3, title: 'Movie title 3' }
-          ]
-        },
-      },
-    },
-  },
-];
-
 const moviesMock = [
   {
     id: 1,
@@ -66,6 +44,25 @@ const moviesMock = [
     }
   }
 ]
+
+const mocks = [
+  {
+    request: {
+      query: GET_ALL_MOVIES,
+      variables: {
+        genre: 'War',
+      },
+    },
+    result: {
+      data: {
+        allMovies: {
+          data: moviesMock
+        },
+      },
+    },
+  },
+];
+
 
 describe('Movies Component', () => {
 
