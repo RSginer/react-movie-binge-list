@@ -7,7 +7,7 @@ import Favorites from './containers/favorites/favorites';
 import { Route } from "react-router-dom";
 import { ConnectedRouter } from 'connected-react-router'
 
-import {history} from './createStore';
+import { history } from './createStore';
 
 import './App.scss';
 
