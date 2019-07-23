@@ -1,8 +1,6 @@
 ## @RSginer - My Binge List
 
-To review:
-
-### `npm run deploy` (prod mode)
+### `npm run deploy` (prod mode) - Use this one to review the project
 
 - Webapp: (`http://localhost:8080`)[http://localhost:8080]
 - GraphQL: (`http://localhost:4000/graphql`)[http://localhost:4000/graphql]
