@@ -1,5 +1,7 @@
 ## @RSginer - My Binge List
 
+- Note: Is my first webapp in React, don't be evil please 😂, I hope you like it and thanks for the opportunity.
+
 ### `yarn run deploy` (prod mode) - Use this one to review the project
 
 - Webapp: http://localhost:8080
