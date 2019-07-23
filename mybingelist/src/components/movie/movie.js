@@ -1,10 +1,30 @@
 import React, { Component } from 'react';
 
+import { Mutation } from "react-apollo";
+import { gql } from "apollo-boost";
+
 import ratingStar from './../../assets/icons/rating_star.svg';
 import adoveMedianStar from './../../assets/icons/above_median_star.svg';
 import calendar from './../../assets/icons/calendar_icon.svg';
+import addFavoritesIcon from './../../assets/icons/add_favorite.svg';
+import removeFavoritesIcon from './../../assets/icons/remove_favorite.svg';
+
 
 import './movie.scss';
+
+const ADD_TO_FAVORITES = gql`
+  mutation addFavorite($movieId: Int!){
+    addFavorite(movieId: $movieId) {
+      id
+    }
+  }`;
+
+const REMOVE_FAVORITE = gql`
+  mutation removeFavorite($movieId: Int!){
+    removeFavorite(movieId: $movieId) {
+      id
+    }
+  }`;
 
 export class Movie extends Component {
 
@@ -21,8 +41,27 @@ export class Movie extends Component {
       <div className="movie-container" data-test="movieComponent">
         <div className="movie-container__wrap">
           <div className="movie-thumbnail">
-            <div>{this.props.isFavorite && 'Yes!'}</div>
             <img className="movie-thumbnail__img" src={this.props.poster.fullPath} alt={`Thubnail of movie ${this.props.title}`} />
+            {!this.props.isFavorite && <Mutation mutation={ADD_TO_FAVORITES}>
+              {(addFavorite, { data }) => (
+                <button className="actionfavorites-icon" onClick={e => {
+                  e.preventDefault();
+                  addFavorite({variables: {movieId: this.props.id}})}
+                  }>
+                  <img src={addFavoritesIcon} alt="Add favorites button" />
+                </button>
+              )}
+            </Mutation>}
+            {this.props.isFavorite && <Mutation mutation={REMOVE_FAVORITE}>
+              {(removeFavorite, { data }) => (
+                <button className="actionfavorites-icon" onClick={e => {
+                  e.preventDefault();
+                  removeFavorite({variables: {movieId: this.props.id}})
+                  }}>
+                  <img src={removeFavoritesIcon} alt="Remove favorites button" />
+                </button>
+              )}
+            </Mutation>}
           </div>
           <div className="movie-desc-wrap">
             <div className="movie-desc-wrap__header">

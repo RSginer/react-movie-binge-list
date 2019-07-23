@@ -15,6 +15,15 @@
     .movie-thumbnail {
       height: 345px;
       width: 230px;
+      position: relative;
+
+      .actionfavorites-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: none;
+        background: transparent;
+      }
 
       .movie-thumbnail__img {
         height: 345px;

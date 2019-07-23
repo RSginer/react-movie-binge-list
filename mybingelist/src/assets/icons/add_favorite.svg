@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="43px" height="57px" viewBox="0 0 43 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>bookmark</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Mobile---Search" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-15.000000, -145.000000)">
+        <g id="movie-list">
+            <g transform="translate(15.000000, 145.000000)">
+                <g id="movie">
+                    <g id="bookmark">
+                        <g>
+                            <path d="M0,57 L0,5.34375 C0,2.39244141 2.40643229,0 5.375,0 L37.625,0 C40.5935677,0 43,2.39244141 43,5.34375 L43,57 L21.5,44.53125 L0,57 Z" id="Shape" fill-opacity="0.9" fill="#9B9B9B" fill-rule="nonzero"></path>
+                            <g id="add" transform="translate(6.000000, 8.000000)">
+                                <rect id="bounds" x="0" y="0" width="30" height="30"></rect>
+                                <polygon id="Shape" fill="#000000" opacity="0.539999962" points="13.7438424 6.33027523 13.7438424 13.8794233 6.20689655 13.8794233 6.20689655 16.395806 13.7438424 16.395806 13.7438424 23.9449541 16.2561576 23.9449541 16.2561576 16.395806 23.7931034 16.395806 23.7931034 13.8794233 16.2561576 13.8794233 16.2561576 6.33027523"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
