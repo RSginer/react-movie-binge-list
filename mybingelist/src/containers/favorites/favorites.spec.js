@@ -71,7 +71,9 @@ describe('Favorites Component', () => {
         favorites: [],
         loading: true,
         error: undefined,
-        setupHeader: () => { }
+        setupHeader: () => { },
+        fetchFavorites: () => {},
+        removeFavorite: () => {}
       }
       component = mount(
         <Favorites.WrappedComponent {...props} />
@@ -101,7 +103,9 @@ describe('Favorites Component', () => {
         error: {
           message: 'Error test'
         },
-        setupHeader: () => { }
+        setupHeader: () => { },
+        fetchFavorites: () => {},
+        removeFavorite: () => {}
       }
       component = mount(
         <Favorites.WrappedComponent {...props} />
@@ -128,7 +132,9 @@ describe('Favorites Component', () => {
         loading: false,
         error: undefined,
         favorites: favoritesMock,
-        setupHeader: () => { }
+        setupHeader: () => { },
+        fetchFavorites: () => {},
+        removeFavorite: () => {}
       }
       component = mount(
         <MockedProvider mocks={mocks} addTypename={false}>

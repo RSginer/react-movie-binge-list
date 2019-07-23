@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { setupHeader, fetchFavorites } from '../../actions';
+import { setupHeader, fetchFavorites, removeFavorite } from '../../actions';
 
 import Movie from './../../components/movie/movie';
 
@@ -17,10 +17,18 @@ export class Favorites extends Component {
     this.props.fetchFavorites()
   }
 
+  removeFavorite = (id) => {
+    this.props.removeFavorite(id);
+  }
+
   render() {
     return (
-      <div>
-        {this.props.favorites.map((f) => <Movie {...f} isFavorite={true} />)}
+      <div className="movies-container__movies-list">
+        {this.props.favorites.map((f, i) => <Movie 
+        key={i}
+        {...f} isFavorite={true} 
+        removeFavorite={this.removeFavorite} 
+        />)}
       </div>
     )
   }
@@ -37,7 +45,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     setupHeader: setupHeader(dispatch),
-    fetchFavorites: fetchFavorites(dispatch)
+    fetchFavorites: fetchFavorites(dispatch),
+    removeFavorite: removeFavorite(dispatch)
   }
 }
 
