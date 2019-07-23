@@ -30,7 +30,7 @@ export class Movie extends Component {
                     {this.props.title}
                   </div>
                   <div className="header__rating">
-                    <span className="rating-number">7.2</span>
+                    <span className="rating-number">{this.props.rating}</span>
                     <img className="rating-icon" src={ratingStar} alt="rating icon" />
                   </div>
                 </div>
@@ -51,7 +51,7 @@ export class Movie extends Component {
               </div>
             </div>
             <div className="movie-desc-wrap__footer">
-              <img className="footer__star-icon" src={adoveMedianStar} alt="Median Star" />
+              {this.props.medianRating < this.props.rating ? <img className="footer__star-icon" src={adoveMedianStar} alt="Median Star" /> : <div className="footer__star-icon fake"></div>}
               <button className="footer__button">More info</button>
             </div>
           </div>
