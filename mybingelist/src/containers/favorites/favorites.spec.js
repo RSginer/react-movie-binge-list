@@ -68,7 +68,6 @@ describe('Favorites Component', () => {
 
     beforeEach(() => {
       const props = {
-        medianRating: undefined,
         favorites: [],
         loading: true,
         error: undefined,
@@ -97,7 +96,6 @@ describe('Favorites Component', () => {
 
     beforeEach(() => {
       const props = {
-        medianRating: undefined,
         favorites: [],
         loading: false,
         error: {
@@ -127,7 +125,6 @@ describe('Favorites Component', () => {
 
     beforeEach(() => {
       const props = {
-        medianRating: undefined,
         loading: false,
         error: undefined,
         favorites: favoritesMock,
