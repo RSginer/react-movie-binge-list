@@ -59,7 +59,7 @@ export class Movies extends Component {
             {...movie} 
             removeFavorite={this.removeFavorite} 
             addFavorite={this.addFavorite} 
-            isFavorite={this.props.favorites.includes(movie.id)} 
+            isFavorite={this.props.favoriteIds.includes(movie.id)} 
             medianRating={this.props.medianRating} />)}
           </div>}
         {!this.props.error && !this.props.loading && this.props.movies.length === 0 && <EmptyMessage />}
@@ -75,7 +75,7 @@ const mapStateToProps = (state) => {
     movies: state.movies.movies,
     loading: state.movies.loading,
     error: state.movies.error,
-    favorites: state.movies.favorites
+    favoriteIds: state.movies.favoriteIds
   }
 }
 

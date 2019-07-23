@@ -6,7 +6,7 @@ export default (state = {
   movies: [],
   loading: false,
   error: undefined,
-  favorites: []
+  favoriteIds: []
 }, action) => {
   switch (action.type) {
     case types.FETCH_MOVIES:
@@ -20,25 +20,25 @@ export default (state = {
         error: undefined,
         medianRating: calcMedianRating(action.payload.allMovies.data),
         movies: action.payload.allMovies.data,
-        favorites: action.payload.favorites.map((f) => f.id)
+        favoriteIds: action.payload.favorites.map((f) => f.id)
       }
     case types.CLEAR_MOVIES:
       return { ...state, movies: action.payload, error: undefined, loading: false }
     case types.REMOVE_FAVORITE:
-      return { ...state, favorites: removeFavorite(state.favorites, action.payload) }
+      return { ...state, favoriteIds: removeFavorite(state.favorites, action.payload) }
     case types.ADD_FAVORITE:
-      return { ...state, favorites: addFavorite(state.favorites, action.payload) }
+      return { ...state, favoriteIds: addFavorite(state.favorites, action.payload) }
     default:
       return state;
   }
 }
 
-function addFavorite(favorites, id) {
-  return [...favorites, id]
+function addFavorite(favoriteIds, id) {
+  return [...favoriteIds, id]
 }
 
-function removeFavorite(favorites, id) {
-  return favorites.filter((i) => i !== id);
+function removeFavorite(favoriteIds, id) {
+  return favoriteIds.filter((i) => i !== id);
 }
 
 function calcMedianRating(movies) {

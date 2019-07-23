@@ -76,7 +76,7 @@ describe('Movies Component', () => {
         movies: [],
         loading: true,
         error: undefined,
-        favorites: [],
+        favoriteIds: [],
         setupHeader: () => { }
       }
       component = mount(
@@ -109,7 +109,7 @@ describe('Movies Component', () => {
         error: {
           message: 'Error test'
         },
-        favorites: [],
+        favoriteIds: [],
         setupHeader: () => { }
       }
       component = mount(
