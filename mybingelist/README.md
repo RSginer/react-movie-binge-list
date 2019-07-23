@@ -13,7 +13,7 @@ In the project directory, you can run also the following commands:
 
 ### `npm start` (dev mode)
 
-Runs the app in the development mode.<br>
+Runs the app in the development mode. (Probablly you will need to run the [movie-service](https://cloud.docker.com/u/rsginer/repository/docker/rsginer/codingventures-movie-service))<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
