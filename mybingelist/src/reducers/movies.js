@@ -25,9 +25,9 @@ export default (state = {
     case types.CLEAR_MOVIES:
       return { ...state, movies: action.payload, error: undefined, loading: false }
     case types.REMOVE_FAVORITE:
-      return { ...state, favoriteIds: removeFavorite(state.favorites, action.payload) }
+      return { ...state, favoriteIds: removeFavorite(state.favoriteIds, action.payload) }
     case types.ADD_FAVORITE:
-      return { ...state, favoriteIds: addFavorite(state.favorites, action.payload) }
+      return { ...state, favoriteIds: addFavorite(state.favoriteIds, action.payload) }
     default:
       return state;
   }
