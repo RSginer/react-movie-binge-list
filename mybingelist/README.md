@@ -2,14 +2,14 @@
 
 In the project directory, you can run:
 
-### `npm run deploy`
+### `npm run deploy` (prodmode)
 
 - Webapp: `http://localhost:8080` 
 - GraphQL: `http://localhost:4000/graphql`
 
 Creates a docker image with the app bundles inside a NGINX server runing and starts GraphQL server (I pushed to [my dockerhub](https://cloud.docker.com/u/rsginer/repository/docker/rsginer/codingventures-movie-service) the version 0.2.0 of [movie-service](https://github.com/keremk/movie-service) because in the version 0.3.0 mutations are not working)
 
-### `npm start`
+### `npm start` (devmode)
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
