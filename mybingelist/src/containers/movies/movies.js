@@ -41,6 +41,14 @@ export class Movies extends Component {
     return genre.includes(',') ? genre.split(',')[0] : genre;
   }
 
+  removeFavorite = (id) => {
+    this.props.removeFavorite(id);
+  }
+
+  addFavorite = (id) => {
+    this.props.addFavorite(id);
+  }
+
   render() {
     return (
       <section className="movies-container" data-test="moviesComponent">
@@ -49,7 +57,7 @@ export class Movies extends Component {
         {this.props.error && <ServerError message={this.props.error.message} />}
         {this.props.movies && this.props.movies.length > 0 && !this.props.error &&
           <div className="movies-container__movies-list">
-            {this.props.movies.map((movie) => <Movie key={movie.id} {...movie} isFavorite={this.props.favorites.includes(movie.id)} medianRating={this.props.medianRating} />)}
+            {this.props.movies.map((movie) => <Movie key={movie.id} {...movie} removeFavorite={this.removeFavorite} addFavorite={this.addFavorite} isFavorite={this.props.favorites.includes(movie.id)} medianRating={this.props.medianRating} />)}
           </div>}
         {!this.props.error && !this.props.loading && this.props.movies.length === 0 && <EmptyMessage />}
       </section>
@@ -82,6 +90,14 @@ const mapDispatchToProps = dispatch => {
     clearMovies: () => dispatch({
       type: types.CLEAR_MOVIES,
       payload: []
+    }),
+    removeFavorite: (id) => dispatch({
+      type: types.REMOVE_FAVORITE,
+      payload: id
+    }),
+    addFavorite: (id) => dispatch({
+      type: types.ADD_FAVORITE,
+      payload: id
     })
   }
 }

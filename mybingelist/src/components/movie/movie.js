@@ -46,7 +46,9 @@ export class Movie extends Component {
               {(addFavorite, { data }) => (
                 <button className="actionfavorites-icon" onClick={e => {
                   e.preventDefault();
-                  addFavorite({variables: {movieId: this.props.id}})}
+                  addFavorite({variables: {movieId: this.props.id}})
+                  this.props.addFavorite(this.props.id)
+                }
                   }>
                   <img src={addFavoritesIcon} alt="Add favorites button" />
                 </button>
@@ -57,6 +59,7 @@ export class Movie extends Component {
                 <button className="actionfavorites-icon" onClick={e => {
                   e.preventDefault();
                   removeFavorite({variables: {movieId: this.props.id}})
+                  this.props.removeFavorite(this.props.id)
                   }}>
                   <img src={removeFavoritesIcon} alt="Remove favorites button" />
                 </button>

@@ -23,10 +23,22 @@ export default (state = {
         favorites: action.payload.favorites.map((f) => f.id)
       }
     case types.CLEAR_MOVIES:
-        return {...state, movies: action.payload, error: undefined, loading: false}
+      return { ...state, movies: action.payload, error: undefined, loading: false }
+    case types.REMOVE_FAVORITE:
+      return { ...state, favorites: removeFavorite(state.favorites, action.payload) }
+    case types.ADD_FAVORITE:
+      return { ...state, favorites: addFavorite(state.favorites, action.payload) }
     default:
       return state;
   }
+}
+
+function addFavorite(favorites, id) {
+  return [...favorites, id]
+}
+
+function removeFavorite(favorites, id) {
+  return favorites.filter((i) => i !== id);
 }
 
 function calcMedianRating(movies) {
