@@ -6,7 +6,7 @@ In the project directory, you can run:
 
 ### `docker-compose up`
 
-Starts GraphQL server (I was push to my dockerhub the version 0.2.0 of [movie-service](https://github.com/keremk/movie-service) because in the version 0.3.0 mutations are not working)
+Starts GraphQL server (I pushed to [my dockerhub](https://cloud.docker.com/u/rsginer/repository/docker/rsginer/codingventures-movie-service) the version 0.2.0 of [movie-service](https://github.com/keremk/movie-service) because in the version 0.3.0 mutations are not working)
 
 ### `npm start`
 
