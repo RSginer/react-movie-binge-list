@@ -42,6 +42,7 @@ export class Movie extends Component {
         <div className="movie-container__wrap">
           <div className="movie-thumbnail">
             <img className="movie-thumbnail__img" src={this.props.poster.fullPath} alt={`Thubnail of movie ${this.props.title}`} />
+            {this.props.medianRating < this.props.rating ? <img className="star-icon--mobile" src={adoveMedianStar} alt="Median Star" /> : undefined}
             {!this.props.isFavorite && <Mutation mutation={ADD_TO_FAVORITES}>
               {(addFavorite, { data }) => (
                 <button className="actionfavorites-icon" onClick={e => {

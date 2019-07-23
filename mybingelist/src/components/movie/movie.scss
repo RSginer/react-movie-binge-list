@@ -17,6 +17,14 @@
       width: 230px;
       position: relative;
 
+      .star-icon--mobile {
+        display: none;
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        width: 55px;
+      }
+
       .actionfavorites-icon {
         position: absolute;
         top: 0;
@@ -157,6 +165,10 @@
   .movie-thumbnail {
     width: 100% !important;
     height: auto !important;
+
+    .star-icon--mobile {
+      display: block !important;
+    }
 
     .movie-thumbnail__img {
       width: 100% !important;
