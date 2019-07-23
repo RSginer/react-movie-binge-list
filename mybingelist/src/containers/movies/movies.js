@@ -74,7 +74,9 @@ export class Movies extends Component {
             if (error) return <ServerError genre={this.state.searchInputValue} message={error.message} />;
             if (!data || !data.allMovies || !data.allMovies.data || data.allMovies.data.length < 1) return <EmptyMessage />;
 
-            this.getMedian(data.allMovies.data);
+            if (data && data.allMovies && data.allMovies.data.length > 0) {
+              this.getMedian(data.allMovies.data);
+            }
 
             return (
               <div className="movies-container__movies-list">
