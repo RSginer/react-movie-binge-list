@@ -13,7 +13,6 @@ export const setupHeader = (dispatch) => (options) => dispatch({
 /**
  * Movies Actions
  */
-
 export const fetchMovies = (dispatch) => async (genre) => {
 
   const g = genre.includes(',') ? genre.split(',')[0] : genre;
@@ -57,3 +56,21 @@ export const addFavorite = (dispatch) => (id) => dispatch({
 /**
  * Favorites Actions
  */
+export const fetchFavorites = (dispatch) => async () => {
+
+  dispatch({
+    type: types.FETCH_FAVORITES
+  })
+
+  await client.query({
+    query: GET_FAVORITES
+  }).then((response) => {
+      dispatch({
+        type: types.FETCH_FAVORITES,
+        payload: response.data.favorites
+      })
+  }).catch((err) => dispatch({
+    type: types.FETCH_FAVORITES_ERROR,
+    payload: err
+  }))
+}
