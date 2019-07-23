@@ -54,7 +54,13 @@ export class Movies extends Component {
         {this.props.error && <ServerError message={this.props.error.message} />}
         {this.props.movies && this.props.movies.length > 0 && !this.props.error &&
           <div className="movies-container__movies-list">
-            {this.props.movies.map((movie) => <Movie key={movie.id} {...movie} removeFavorite={this.removeFavorite} addFavorite={this.addFavorite} isFavorite={this.props.favorites.includes(movie.id)} medianRating={this.props.medianRating} />)}
+            {this.props.movies.map((movie) => <Movie 
+            key={movie.id} 
+            {...movie} 
+            removeFavorite={this.removeFavorite} 
+            addFavorite={this.addFavorite} 
+            isFavorite={this.props.favorites.includes(movie.id)} 
+            medianRating={this.props.medianRating} />)}
           </div>}
         {!this.props.error && !this.props.loading && this.props.movies.length === 0 && <EmptyMessage />}
       </section>
