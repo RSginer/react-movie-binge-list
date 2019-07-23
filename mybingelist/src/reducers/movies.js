@@ -46,11 +46,11 @@ function calcMedianRating(movies) {
 
   if (ratings.length === 0) return 0;
 
-  ratings.sort(function (a, b) {
+  ratings.sort((a, b) => {
     return a - b;
   });
 
-  var half = Math.floor(ratings.length / 2);
+  const half = Math.floor(ratings.length / 2);
 
   if (ratings.length % 2)
     return ratings[half];
