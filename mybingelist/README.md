@@ -29,8 +29,8 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br>
 
 - Test suites:
-  * Jest
-  * Enzyme
+  * [Jest](https://jestjs.io/)
+  * [Enzyme](https://airbnb.io/enzyme/)
 
 ### `yarn run build`
 
