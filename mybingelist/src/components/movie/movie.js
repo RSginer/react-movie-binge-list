@@ -9,22 +9,9 @@ import calendar from './../../assets/icons/calendar_icon.svg';
 import addFavoritesIcon from './../../assets/icons/add_favorite.svg';
 import removeFavoritesIcon from './../../assets/icons/remove_favorite.svg';
 
+import { ADD_TO_FAVORITES, REMOVE_FAVORITE } from './../../graphql';
 
 import './movie.scss';
-
-const ADD_TO_FAVORITES = gql`
-  mutation addFavorite($movieId: Int!){
-    addFavorite(movieId: $movieId) {
-      id
-    }
-  }`;
-
-const REMOVE_FAVORITE = gql`
-  mutation removeFavorite($movieId: Int!){
-    removeFavorite(movieId: $movieId) {
-      id
-    }
-  }`;
 
 export class Movie extends Component {
 
@@ -47,10 +34,10 @@ export class Movie extends Component {
               {(addFavorite, { data }) => (
                 <button className="actionfavorites-icon" onClick={e => {
                   e.preventDefault();
-                  addFavorite({variables: {movieId: this.props.id}})
+                  addFavorite({ variables: { movieId: this.props.id } })
                   this.props.addFavorite(this.props.id)
                 }
-                  }>
+                }>
                   <img src={addFavoritesIcon} alt="Add favorites button" />
                 </button>
               )}
@@ -59,9 +46,9 @@ export class Movie extends Component {
               {(removeFavorite, { data }) => (
                 <button className="actionfavorites-icon" onClick={e => {
                   e.preventDefault();
-                  removeFavorite({variables: {movieId: this.props.id}})
+                  removeFavorite({ variables: { movieId: this.props.id } })
                   this.props.removeFavorite(this.props.id)
-                  }}>
+                }}>
                   <img src={removeFavoritesIcon} alt="Remove favorites button" />
                 </button>
               )}
@@ -76,7 +63,7 @@ export class Movie extends Component {
                   </div>
                   <div className="header__rating">
                     <span className="rating-number">{this.props.rating}</span>
-                    <img className="rating-icon" src={ratingStar} alt="rating icon"/>
+                    <img className="rating-icon" src={ratingStar} alt="rating icon" />
                   </div>
                 </div>
                 <div className="header__calendar-genres">
@@ -96,7 +83,7 @@ export class Movie extends Component {
               </div>
             </div>
             <div className="movie-desc-wrap__footer">
-              {this.props.medianRating < this.props.rating ? <img className="footer__star-icon" src={adoveMedianStar} alt="Median Star" data-test="ratingStar"/> : <div className="footer__star-icon fake"></div>}
+              {this.props.medianRating < this.props.rating ? <img className="footer__star-icon" src={adoveMedianStar} alt="Median Star" data-test="ratingStar" /> : <div className="footer__star-icon fake"></div>}
               <button className="footer__button">More info</button>
             </div>
           </div>

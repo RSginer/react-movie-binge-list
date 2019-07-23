@@ -1,53 +1,6 @@
 import { types } from './types';
-import { gql } from "apollo-boost";
+import { GET_ALL_MOVIES, GET_FAVORITES } from './../graphql';
 import { client } from './../apollo-client';
-
-export const GET_FAVORITES = gql`
-query getFavorites {
-  favorites {
-    id
-      title
-      releaseYear
-      overview
-      rating
-      genres {
-        name
-      }
-      poster(size: MEDIUM) {
-        fullPath,
-      },
-      tagline
-  }
-}
-`;
-
-export const GET_ALL_MOVIES = gql`
-query allMoviesByGenre($genre: String!) {
-  allMovies(genre: $genre, limit: 10, offset:0) {
-    metadata {
-      limit
-      total
-      offset
-    }
-    data {
-      id
-      title
-      releaseYear
-      overview
-      rating
-      genres {
-        name
-      }
-      poster(size: MEDIUM) {
-        fullPath,
-      },
-      tagline
-    }
-  }
-  favorites {
-    id
-  }
-}`;
 
 export const fetchMovies = (dispatch) => async (genre) => {
 
