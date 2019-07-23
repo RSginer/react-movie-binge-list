@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import { findByTestAttr } from './../../../utils/test';
 import { MockedProvider } from 'react-apollo/test-utils';
 
-import { GET_FAVORITES } from '../../actions/index';
+import { GET_FAVORITES } from './../../graphql';
 
 const favoritesMock = [
   {

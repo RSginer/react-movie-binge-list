@@ -24,7 +24,7 @@ export class Favorites extends Component {
 
   render() {
     return (
-      <section className="movies-container__movies-list">
+      <section className="movies-container__movies-list" data-test="favoritesComponent">
         {this.props.loading && !this.props.error && <p data-test="loading">Loading...</p>}
         {this.props.error && <ServerError message={this.props.error.message} />}
         {this.props.favorites.map((f, i) => <Movie 
