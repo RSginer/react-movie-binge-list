@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { fetchMovies } from './../../actions'
-
-import { types } from '../../actions/types';
+import { fetchMovies, clearMovies, removeFavorite, addFavorite, setupHeader } from './../../actions'
 
 import './movies.scss';
 
@@ -21,7 +19,11 @@ export class Movies extends Component {
   }
 
   componentWillMount() {
-    this.props.setupHeader();
+    this.props.setupHeader({
+      showBackButton: false,
+      showFavoritesButton: true,
+      title: 'My Binge List'
+    });
   }
 
   onSearchSubmit = async (e) => {
@@ -78,27 +80,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setupHeader: () => dispatch({
-      type: types.SET_ROUTE,
-      payload: {
-        showBackButton: false,
-        showFavoritesButton: true,
-        title: 'My Binge List'
-      }
-    }),
+    setupHeader: setupHeader(dispatch),
     fetchMovies: fetchMovies(dispatch),
-    clearMovies: () => dispatch({
-      type: types.CLEAR_MOVIES,
-      payload: []
-    }),
-    removeFavorite: (id) => dispatch({
-      type: types.REMOVE_FAVORITE,
-      payload: id
-    }),
-    addFavorite: (id) => dispatch({
-      type: types.ADD_FAVORITE,
-      payload: id
-    })
+    clearMovies: clearMovies(dispatch),
+    removeFavorite: removeFavorite(dispatch),
+    addFavorite: addFavorite(dispatch)
   }
 }
 

@@ -30,7 +30,6 @@ query allMoviesByGenre($genre: String!) {
   }
 }`;
 
-
 export const fetchMovies = (dispatch) => async (genre) => {
   dispatch({
     type: types.FETCH_MOVIES,
@@ -52,3 +51,23 @@ export const fetchMovies = (dispatch) => async (genre) => {
     payload: err
   }))
 }
+
+export const clearMovies = (dispatch) => () => dispatch({
+  type: types.CLEAR_MOVIES,
+  payload: []
+});
+
+export const removeFavorite = (dispatch) => (id) => dispatch({
+  type: types.REMOVE_FAVORITE,
+  payload: id
+});
+
+export const addFavorite = (dispatch) => (id) => dispatch({
+  type: types.ADD_FAVORITE,
+  payload: id
+});
+
+export const setupHeader = (dispatch) => (options) => dispatch({
+  type: types.SET_ROUTE,
+  payload: options
+})
