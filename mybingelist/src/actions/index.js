@@ -2,6 +2,10 @@ import { types } from './types';
 import { gql } from "apollo-boost";
 import { client } from './../apollo-client';
 
+export const GET_FAVORITES = gql`
+  
+`;
+
 export const GET_ALL_MOVIES = gql`
 query allMoviesByGenre($genre: String!) {
   allMovies(genre: $genre, limit: 10, offset:0) {
