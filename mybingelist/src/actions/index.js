@@ -2,6 +2,18 @@ import { types } from './types';
 import { GET_ALL_MOVIES, GET_FAVORITES } from './../graphql';
 import { client } from './../apollo-client';
 
+/**
+ * Header Actions
+ */
+export const setupHeader = (dispatch) => (options) => dispatch({
+  type: types.SET_ROUTE,
+  payload: options
+})
+
+/**
+ * Movies Actions
+ */
+
 export const fetchMovies = (dispatch) => async (genre) => {
 
   const g = genre.includes(',') ? genre.split(',')[0] : genre;
@@ -42,7 +54,6 @@ export const addFavorite = (dispatch) => (id) => dispatch({
   payload: id
 });
 
-export const setupHeader = (dispatch) => (options) => dispatch({
-  type: types.SET_ROUTE,
-  payload: options
-})
+/**
+ * Favorites Actions
+ */
