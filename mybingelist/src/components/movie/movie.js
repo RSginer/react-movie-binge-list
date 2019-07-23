@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 
 import { Mutation } from "react-apollo";
-import { gql } from "apollo-boost";
+import { ADD_TO_FAVORITES, REMOVE_FAVORITE } from './../../graphql';
 
 import ratingStar from './../../assets/icons/rating_star.svg';
 import adoveMedianStar from './../../assets/icons/above_median_star.svg';
 import calendar from './../../assets/icons/calendar_icon.svg';
 import addFavoritesIcon from './../../assets/icons/add_favorite.svg';
 import removeFavoritesIcon from './../../assets/icons/remove_favorite.svg';
-
-import { ADD_TO_FAVORITES, REMOVE_FAVORITE } from './../../graphql';
 
 import './movie.scss';
 
