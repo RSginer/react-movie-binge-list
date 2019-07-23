@@ -43,16 +43,6 @@ export const clearMovies = (dispatch) => () => dispatch({
   payload: []
 });
 
-export const removeFavorite = (dispatch) => (id) => dispatch({
-  type: types.REMOVE_FAVORITE,
-  payload: id
-});
-
-export const addFavorite = (dispatch) => (id) => dispatch({
-  type: types.ADD_FAVORITE,
-  payload: id
-});
-
 /**
  * Favorites Actions
  */
@@ -74,3 +64,13 @@ export const fetchFavorites = (dispatch) => async () => {
     payload: err
   }))
 }
+
+export const removeFavorite = (dispatch) => (id) => dispatch({
+  type: types.REMOVE_FAVORITE,
+  payload: id
+});
+
+export const addFavorite = (dispatch) => (id) => dispatch({
+  type: types.ADD_FAVORITE,
+  payload: id
+});
