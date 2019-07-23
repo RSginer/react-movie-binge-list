@@ -31,15 +31,18 @@ query allMoviesByGenre($genre: String!) {
 }`;
 
 export const fetchMovies = (dispatch) => async (genre) => {
+
+  const g = genre.includes(',') ? genre.split(',')[0] : genre;
+
   dispatch({
     type: types.FETCH_MOVIES,
-    payload: genre
+    payload: g
   })
 
   await client.query({
     query: GET_ALL_MOVIES,
     variables: {
-      genre: genre
+      genre: g
     }
   }).then((response) => {
       dispatch({

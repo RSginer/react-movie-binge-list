@@ -28,8 +28,7 @@ export class Movies extends Component {
 
   onSearchSubmit = async (e) => {
     if (this.state.searchInputValue.length > 0) {
-      const genre = this.extractFirstGenre(this.state.searchInputValue)
-      this.props.fetchMovies(genre);
+      this.props.fetchMovies(this.state.searchInputValue);
     } else {
       this.props.clearMovies();
     }
@@ -37,10 +36,6 @@ export class Movies extends Component {
 
   onSearchInputChange = (e) => {
     this.setState({ searchInputValue: e.target.value });
-  }
-
-  extractFirstGenre = (genre) => {
-    return genre.includes(',') ? genre.split(',')[0] : genre;
   }
 
   removeFavorite = (id) => {
