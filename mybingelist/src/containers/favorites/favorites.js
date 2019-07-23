@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { setupHeader, fetchFavorites, removeFavorite } from '../../actions';
 
 import Movie from './../../components/movie/movie';
+import ServerError from './../../components/serverError/serverError';
 
 export class Favorites extends Component {
 
@@ -24,6 +25,8 @@ export class Favorites extends Component {
   render() {
     return (
       <section className="movies-container__movies-list">
+        {this.props.loading && !this.props.error && <p data-test="loading">Loading...</p>}
+        {this.props.error && <ServerError message={this.props.error.message} />}
         {this.props.favorites.map((f, i) => <Movie 
         key={i}
         movie={f} isFavorite={true} 

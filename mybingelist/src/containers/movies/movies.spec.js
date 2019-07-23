@@ -139,7 +139,7 @@ describe('Movies Component', () => {
         movies: moviesMock,
         loading: false,
         error: undefined,
-        favorites: [],
+        favoriteIds: [],
         setupHeader: () => { }
       }
       component = mount(

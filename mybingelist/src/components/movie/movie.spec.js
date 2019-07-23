@@ -11,12 +11,14 @@ describe('Movie Component', () => {
     beforeEach(() => {
   
       const props = {
-        title: 'Movie 1',
-        poster: {
-          fullPath: 'https://via.placeholder.com/230x345'
-        },
-        overview: 'Movie overview',
-        releaseYear: 2019
+        movie: {
+          title: 'Movie 1',
+          poster: {
+            fullPath: 'https://via.placeholder.com/230x345'
+          },
+          overview: 'Movie overview',
+          releaseYear: 2019
+        }
       }
   
       component = shallow(<Movie {...props} medianRating={7} />);
@@ -36,13 +38,15 @@ describe('Movie Component', () => {
     beforeEach(() => {
   
       const props = {
-        title: 'Movie 1',
-        poster: {
-          fullPath: 'https://via.placeholder.com/230x345'
-        },
-        overview: 'Movie overview',
-        rating: 8,
-        releaseYear: 2019
+        movie: {
+          title: 'Movie 1',
+          poster: {
+            fullPath: 'https://via.placeholder.com/230x345'
+          },
+          overview: 'Movie overview',
+          rating: 8,
+          releaseYear: 2019
+        }
       }
   
       component = shallow(<Movie {...props} medianRating={7} />);
@@ -62,13 +66,15 @@ describe('Movie Component', () => {
     beforeEach(() => {
   
       const props = {
-        title: 'Movie 1',
-        poster: {
-          fullPath: 'https://via.placeholder.com/230x345'
-        },
-        overview: 'Movie overview',
-        rating: 6,
-        releaseYear: 2019
+        movie: {
+          title: 'Movie 1',
+          poster: {
+            fullPath: 'https://via.placeholder.com/230x345'
+          },
+          overview: 'Movie overview',
+          rating: 6,
+          releaseYear: 2019
+        }
       }
   
       component = shallow(<Movie {...props} medianRating={7} />);
