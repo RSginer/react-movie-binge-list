@@ -1,6 +1,6 @@
 ## @RSginer - My Binge List
 
-- *Note*: I hope you like it and thanks for the opportunity.
+- *Note*: I hope you like it and thanks for the opportunity 😄.
 
 ### `yarn run deploy` (prod mode) - Use this one to review the project
 
