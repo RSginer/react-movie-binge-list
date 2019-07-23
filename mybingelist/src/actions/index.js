@@ -3,7 +3,22 @@ import { gql } from "apollo-boost";
 import { client } from './../apollo-client';
 
 export const GET_FAVORITES = gql`
-  
+query getFavorites {
+  favorites {
+    id
+      title
+      releaseYear
+      overview
+      rating
+      genres {
+        name
+      }
+      poster(size: MEDIUM) {
+        fullPath,
+      },
+      tagline
+  }
+}
 `;
 
 export const GET_ALL_MOVIES = gql`
