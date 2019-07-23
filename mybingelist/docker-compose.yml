@@ -1,0 +1,8 @@
+version: '2'
+services:
+  moviesearch:
+    image: "rsginer/codingventures-movie-service:latest"
+    ports:
+     - "4000:4000"
+    environment: 
+     - FAIL_PERCENT=0.0
