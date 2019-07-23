@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 
@@ -6,7 +6,7 @@ In the project directory, you can run:
 
 ### `docker-compose up`
 
-Starts GraphQL server
+Starts GraphQL server (I was push to my dockerhub the version 0.2.0 of [movie-service](https://github.com/keremk/movie-service) because in the version 0.3.0 mutations are not working)
 
 ### `npm start`
 
