@@ -1,15 +1,15 @@
 ## @RSginer - My Binge List
 
-- Note: Is my first webapp in React I worked with React before but just in React Native, I hope you like it and thanks for the opportunity.
+- *Note*: I hope you like it and thanks for the opportunity.
 
 ### `yarn run deploy` (prod mode) - Use this one to review the project
 
-- Webapp: http://localhost:8080
-- GraphQL: http://localhost:4000/graphql
+- *Webapp*: http://localhost:8080
+- *GraphQL*: http://localhost:4000/graphql
 
 I recommend to use this extensions for a better review:
-  - Redux DevTools: https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
-  - Apollo Client Developer Tools: https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm
+  - *Redux DevTools*: https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
+  - *Apollo Client Developer Tools*: https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm
 
 Creates a docker image with the app bundles inside a NGINX server runing and starts GraphQL server (I pushed to [my dockerhub](https://cloud.docker.com/u/rsginer/repository/docker/rsginer/codingventures-movie-service) the version 0.2.0 of [movie-service](https://github.com/keremk/movie-service) because in the version 0.3.0 mutations are not working)
 
