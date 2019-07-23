@@ -56,7 +56,7 @@ export const fetchFavorites = (dispatch) => async () => {
     query: GET_FAVORITES
   }).then((response) => {
       dispatch({
-        type: types.FETCH_FAVORITES,
+        type: types.FETCH_FAVORITES_SUCCESS,
         payload: response.data.favorites
       })
   }).catch((err) => dispatch({
