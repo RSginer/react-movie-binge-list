@@ -134,7 +134,7 @@ describe('Movies Component', () => {
 
     beforeEach(() => {
       const props = {
-        filter: undefined,
+        filter: 'War',
         medianRating: undefined,
         movies: moviesMock,
         loading: false,
