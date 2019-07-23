@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import ratingStar from './../../assets/icons/rating_star.svg';
 import adoveMedianStar from './../../assets/icons/above_median_star.svg';
 import calendar from './../../assets/icons/calendar_icon.svg';
+
 import './movie.scss';
 
 export class Movie extends Component {

@@ -17,7 +17,7 @@ describe('Movie Component', () => {
       releaseYear: 2019
     }
 
-    component = shallow(<Movie {...props} />);
+    component = shallow(<Movie {...props} medianRating={7} />);
   });
 
   it('Should render', () => {
