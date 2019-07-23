@@ -13,7 +13,9 @@ body {
   display: block;
 }
 
-
+button {
+  outline: none;
+}
 
 @media (max-width: 1469px) {
   .main {
