@@ -154,7 +154,7 @@ describe('Movies Component', () => {
       expect(wrapper.length).toBe(1);
     });
 
-    it('Should render error component', async () => {
+    it('Should render movies', async () => {
       const movies = findByTestAttr(component, 'movieComponent');
       expect(movies.length).toBe(moviesMock.length);
     });
