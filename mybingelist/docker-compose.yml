@@ -6,3 +6,7 @@ services:
      - "4000:4000"
     environment: 
      - FAIL_PERCENT=0.0
+  mybingelist:
+    image: "rsginer/mybingelist"
+    ports:
+      - "8080:80"

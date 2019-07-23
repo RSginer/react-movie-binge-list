@@ -26,6 +26,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "deploy": "docker build . -t rsginer/mybingelist && docker-compose up",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
