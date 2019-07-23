@@ -32,10 +32,9 @@ query allMoviesByGenre($genre: String!) {
 
 
 export const fetchMovies = (dispatch) => async (genre) => {
-  
   dispatch({
     type: types.FETCH_MOVIES,
-    payload: true
+    payload: genre
   })
 
   await client.query({

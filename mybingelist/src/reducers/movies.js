@@ -10,7 +10,7 @@ export default (state = {
 }, action) => {
   switch (action.type) {
     case types.FETCH_MOVIES:
-      return { ...state, loading: action.payload, movies: [], error: undefined, filter: action.payload }
+      return { ...state, loading: true, movies: [], error: undefined, filter: action.payload }
     case types.FETCH_MOVIES_ERROR:
       return { ...state, loading: false, error: action.payload }
     case types.FETCH_MOVIES_SUCCESS:
