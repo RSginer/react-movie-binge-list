@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import './header.scss';
 import { NavLink } from "react-router-dom";
+import { connect } from 'react-redux';
+
+import './header.scss';
 
 import PropTypes from 'prop-types';
 
 import favoriesSVG from './../../assets/icons/favorites.svg';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-import { connect } from 'react-redux';
 
 export class Header extends Component {
 
