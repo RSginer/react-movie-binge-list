@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { types } from '../../actions/types';
+import { setupHeader } from '../../actions';
 
 import { withRouter } from 'react-router-dom'
 
 export class Favorites extends Component {
 
   componentWillMount() {
-    this.props.setupHeader();
+    this.props.setupHeader({
+      showBackButton: true,
+      showFavoritesButton: false,
+      title: 'Favorite Movies'
+    });
   }
 
   render() {
@@ -26,14 +30,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setupHeader: () => dispatch({
-      type: types.SET_ROUTE,
-      payload: {
-        showBackButton: true,
-        showFavoritesButton: false,
-        title: 'Favorite Movies'
-      }
-    })
+    setupHeader: setupHeader(dispatch)
   }
 }
 
