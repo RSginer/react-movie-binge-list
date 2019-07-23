@@ -40,9 +40,7 @@ export class Movie extends Component {
                     <span className="releaseYear">{this.props.releaseYear}</span>
                   </div>
                   <div className="genresWrap">
-                    <span className="genres">{
-                      this.extractGenres(this.props.genres)
-                    }</span>
+                    <span className="genres">{this.extractGenres(this.props.genres)}</span>
                   </div>
                 </div>
               </div>
