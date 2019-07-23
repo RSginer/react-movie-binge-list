@@ -22,6 +22,8 @@ export default (state = {
         movies: action.payload.allMovies.data,
         favorites: action.payload.favorites.map((f) => f.id)
       }
+    case types.CLEAR_MOVIES:
+        return {...state, movies: action.payload, error: undefined, loading: false}
     default:
       return state;
   }

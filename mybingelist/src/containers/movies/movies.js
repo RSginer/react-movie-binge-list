@@ -17,7 +17,7 @@ import ServerError from '../../components/serverError/serverError';
 export class Movies extends Component {
 
   state = {
-    searchInputValue: this.props.filter
+    searchInputValue: this.props.filter | ''
   }
 
   componentWillMount() {
@@ -25,8 +25,12 @@ export class Movies extends Component {
   }
 
   onSearchSubmit = async (e) => {
-    const genre = this.extractFirstGenre(this.state.searchInputValue)
-    this.props.fetchMovies(genre);
+    if (this.state.searchInputValue.length > 0) {
+      const genre = this.extractFirstGenre(this.state.searchInputValue)
+      this.props.fetchMovies(genre);
+    } else {
+      this.props.clearMovies();
+    }
   }
 
   onSearchInputChange = (e) => {
@@ -74,7 +78,11 @@ const mapDispatchToProps = dispatch => {
         title: 'My Binge List'
       }
     }),
-    fetchMovies: fetchMovies(dispatch)
+    fetchMovies: fetchMovies(dispatch),
+    clearMovies: () => dispatch({
+      type: types.CLEAR_MOVIES,
+      payload: []
+    })
   }
 }
 
