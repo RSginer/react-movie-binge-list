@@ -2,8 +2,8 @@
 
 ### `npm run deploy` (prod mode) - Use this one to review the project
 
-- Webapp: (`http://localhost:8080`)[http://localhost:8080]
-- GraphQL: (`http://localhost:4000/graphql`)[http://localhost:4000/graphql]
+- Webapp: (http://localhost:8080)[http://localhost:8080]
+- GraphQL: (http://localhost:4000/graphql)[http://localhost:4000/graphql]
 
 Creates a docker image with the app bundles inside a NGINX server runing and starts GraphQL server (I pushed to [my dockerhub](https://cloud.docker.com/u/rsginer/repository/docker/rsginer/codingventures-movie-service) the version 0.2.0 of [movie-service](https://github.com/keremk/movie-service) because in the version 0.3.0 mutations are not working)
 
