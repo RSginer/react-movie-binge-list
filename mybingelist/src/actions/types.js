@@ -7,5 +7,8 @@ export const types = {
   FETCH_MOVIES_ERROR: '[Movies] fetchMoviesError',
   CLEAR_MOVIES: '[Movies] clearMovies',
   REMOVE_FAVORITE: '[Movies] removeFavorite',
-  ADD_FAVORITE: '[Movies] addFavorite'
+  ADD_FAVORITE: '[Movies] addFavorite',
+  FETCH_FAVORITES: '[Favorites] fetchFavorites',
+  FETCH_FAVORITES_SUCCESS: '[Favorites] fetchFavoritesSuccess',
+  FETCH_FAVORITES_ERROR: '[Favorites] fetchFavoritesError'
 }
