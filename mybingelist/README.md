@@ -4,8 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-Start the server with
-`docker-compose up`
+### `docker-compose up`
+
+Starts GraphQL server
 
 ### `npm start`
 
