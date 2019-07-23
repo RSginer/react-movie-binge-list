@@ -17,7 +17,7 @@ import ServerError from '../../components/serverError/serverError';
 export class Movies extends Component {
 
   state = {
-    searchInputValue: this.props.filter | ''
+    searchInputValue: this.props.filter || ''
   }
 
   componentWillMount() {
