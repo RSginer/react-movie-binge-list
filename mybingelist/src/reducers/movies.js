@@ -2,13 +2,26 @@ import { types } from '../actions/types';
 
 export default (state = {
   filter: undefined,
-  medianRating: undefined
+  medianRating: undefined,
+  movies: [],
+  loading: false,
+  error: undefined,
+  favorites: []
 }, action) => {
-  switch(action.type) {
-    case types.CHANGE_GENRE:
-      return {...state, filter: extractFirstGenre(action.payload)}
-    case types.CHANGE_MEDIAN_RATING:
-      return {...state, medianRating: calcMedianRating(action.payload)}
+  switch (action.type) {
+    case types.FETCH_MOVIES:
+      return { ...state, loading: action.payload, movies: [], error: undefined, filter: action.payload }
+    case types.FETCH_MOVIES_ERROR:
+      return { ...state, loading: false, error: action.payload }
+    case types.FETCH_MOVIES_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        error: undefined,
+        medianRating: calcMedianRating(action.payload.allMovies.data),
+        movies: action.payload.allMovies.data,
+        favorites: action.payload.favorites.map((f) => f.id)
+      }
     default:
       return state;
   }
@@ -17,10 +30,10 @@ export default (state = {
 function calcMedianRating(movies) {
   const ratings = movies.map((m) => m.rating);
 
-  if(ratings.length ===0) return 0;
+  if (ratings.length === 0) return 0;
 
-  ratings.sort(function(a,b){
-    return a-b;
+  ratings.sort(function (a, b) {
+    return a - b;
   });
 
   var half = Math.floor(ratings.length / 2);
@@ -29,8 +42,4 @@ function calcMedianRating(movies) {
     return ratings[half];
 
   return (ratings[half - 1] + ratings[half]) / 2.0;
-}
-
-function extractFirstGenre(genre) {
-  return genre.includes(',') ? genre.split(',')[0] : genre;
 }

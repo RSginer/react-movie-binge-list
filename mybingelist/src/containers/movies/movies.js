@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { Query } from "react-apollo";
-import { gql } from "apollo-boost";
 import { withRouter } from 'react-router-dom';
+
+import { fetchMovies } from './../../actions'
 
 import { types } from '../../actions/types';
 
@@ -14,34 +14,6 @@ import EmptyMessage from '../../components/emptyMessage/emptyMessage';
 import Movie from '../../components/movie/movie';
 import ServerError from '../../components/serverError/serverError';
 
-export const GET_ALL_MOVIES = gql`
-query allMoviesByGenre($genre: String!) {
-  allMovies(genre: $genre, limit: 10, offset:0) {
-    metadata {
-      limit
-      total
-      offset
-    }
-    data {
-      id
-      title
-      releaseYear
-      overview
-      rating
-      genres {
-        name
-      }
-      poster(size: MEDIUM) {
-        fullPath,
-      },
-      tagline
-    }
-  }
-  favorites {
-    id
-  }
-}`;
-
 export class Movies extends Component {
 
   state = {
@@ -49,53 +21,33 @@ export class Movies extends Component {
   }
 
   componentWillMount() {
-    this.props.setupHeader()
+    this.props.setupHeader();
   }
 
-  onSearchSubmit = (e) => {
-    this.props.changeGenre(this.state.searchInputValue);
+  onSearchSubmit = async (e) => {
+    const genre = this.extractFirstGenre(this.state.searchInputValue)
+    this.props.fetchMovies(genre);
   }
 
   onSearchInputChange = (e) => {
     this.setState({ searchInputValue: e.target.value });
   }
 
-  getMedian(movies) {
-    this.props.changeMedianRating(movies)
+  extractFirstGenre = (genre) => {
+    return genre.includes(',') ? genre.split(',')[0] : genre;
   }
 
   render() {
     return (
       <section className="movies-container" data-test="moviesComponent">
         <SearchForm inputChange={this.onSearchInputChange} searchSubmit={this.onSearchSubmit} inputValue={this.state.searchInputValue} />
-        {this.props.filter && <Query
-          query={GET_ALL_MOVIES}
-          variables={{ genre: this.props.filter }}
-        >
-          {({ loading, error, data }) => {
-            if (loading) return <p data-test="loading">Loading...</p>;
-            if (error) return <ServerError genre={this.state.searchInputValue} message={error.message} />;
-            if (!data || !data.allMovies || !data.allMovies.data || data.allMovies.data.length < 1) return <EmptyMessage />;
-            if (data && data.allMovies && data.allMovies.data.length > 0) {
-              this.getMedian(data.allMovies.data);
-            }
-
-            let favoriteIds = [];
-
-            if (data && data.favorites && data.favorites.length > 0) {
-              favoriteIds = data.favorites.map((f) => f.id);
-            }
-
-            return (
-              <div className="movies-container__movies-list">
-                {data.allMovies.data.map((movie) => <Movie key={movie.id} {...movie} isFavorite={favoriteIds.includes(movie.id)} medianRating={this.props.medianRating} />)}
-              </div>
-            );
-          }}
-        </Query>}
-        {
-          !this.props.filter && <EmptyMessage />
-        }
+        {this.props.loading && !this.props.error && <p data-test="loading">Loading...</p>}
+        {this.props.error && <ServerError message={this.props.error.message} />}
+        {this.props.movies && this.props.movies.length > 0 && !this.props.error &&
+          <div className="movies-container__movies-list">
+            {this.props.movies.map((movie) => <Movie key={movie.id} {...movie} isFavorite={this.props.favorites.includes(movie.id)} medianRating={this.props.medianRating} />)}
+          </div>}
+        {!this.props.error && !this.props.loading && this.props.movies.length === 0 && <EmptyMessage />}
       </section>
     )
   }
@@ -104,7 +56,11 @@ export class Movies extends Component {
 const mapStateToProps = (state) => {
   return {
     filter: state.movies.filter,
-    medianRating: state.movies.medianRating
+    medianRating: state.movies.medianRating,
+    movies: state.movies.movies,
+    loading: state.movies.loading,
+    error: state.movies.error,
+    favorites: state.movies.favorites
   }
 }
 
@@ -118,14 +74,7 @@ const mapDispatchToProps = dispatch => {
         title: 'My Binge List'
       }
     }),
-    changeGenre: (genre) => dispatch({
-      type: types.CHANGE_GENRE,
-      payload: genre
-    }),
-    changeMedianRating: (movies) => dispatch({
-      type: types.CHANGE_MEDIAN_RATING,
-      payload: movies
-    })
+    fetchMovies: fetchMovies(dispatch)
   }
 }
 
