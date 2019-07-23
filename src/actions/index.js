@@ -28,6 +28,10 @@ export const fetchMovies = (dispatch) => async (genre) => {
       genre: g
     }
   }).then((response) => {
+    if (response.errors) {
+      throw new Error(response.errors[0].message);
+    }
+    
       dispatch({
         type: types.FETCH_MOVIES_SUCCESS,
         payload: response.data
