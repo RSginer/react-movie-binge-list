@@ -23,13 +23,13 @@ export class Favorites extends Component {
 
   render() {
     return (
-      <div className="movies-container__movies-list">
+      <section className="movies-container__movies-list">
         {this.props.favorites.map((f, i) => <Movie 
         key={i}
         movie={f} isFavorite={true} 
         removeFavorite={this.removeFavorite}
         />)}
-      </div>
+      </section>
     )
   }
 }
