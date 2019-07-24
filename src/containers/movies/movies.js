@@ -11,6 +11,7 @@ import SearchForm from '../../components/searchForm/searchForm';
 import EmptyMessage from '../../components/emptyMessage/emptyMessage';
 import Movie from '../../components/movie/movie';
 import ServerError from '../../components/serverError/serverError';
+import Loading from './../../components/loading/loading';
 
 export class Movies extends Component {
 
@@ -50,7 +51,7 @@ export class Movies extends Component {
     return (
       <section className="movies-container" data-test="moviesComponent">
         <SearchForm inputChange={this.onSearchInputChange} searchSubmit={this.onSearchSubmit} inputValue={this.state.searchInputValue} />
-        {this.props.loading && !this.props.error && <p data-test="loading">Loading...</p>}
+        {this.props.loading && !this.props.error && <Loading />}
         {this.props.error && <ServerError message={this.props.error.message} />}
         {this.props.movies && this.props.movies.length > 0 && !this.props.error &&
           <div className="movies-container__movies-list">

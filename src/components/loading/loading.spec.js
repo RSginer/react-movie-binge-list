@@ -12,7 +12,7 @@ describe('Loading Component', () => {
   });
 
   it('Should render', () => {
-    const wrapper = findByTestAttr(component, 'loadingComponet');
+    const wrapper = findByTestAttr(component, 'loadingComponent');
     expect(wrapper.length).toBe(1);
   });
 
