@@ -65,14 +65,16 @@ describe('Favorites Component', () => {
 
   describe('Fetch initial query and render loader', () => {
     let component;
+    let setupHeader;
 
     beforeEach(() => {
+      setupHeader = jest.fn();
       const props = {
         favorites: [],
         loading: true,
         fetched: false,
         error: undefined,
-        setupHeader: () => { },
+        setupHeader: setupHeader,
         fetchFavorites: () => {},
         removeFavorite: () => {}
       }
@@ -83,6 +85,7 @@ describe('Favorites Component', () => {
 
     it('Should render', () => {
       const wrapper = findByTestAttr(component, 'favoritesComponent');
+      expect(setupHeader.mock.calls.length).toBe(1)
       expect(wrapper.length).toBe(1);
     });
 
