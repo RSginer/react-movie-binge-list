@@ -91,4 +91,32 @@ describe('Movies reducer', () => {
     expect(newState.error).toBeUndefined();
     expect(newState.favoriteIds.length).toBe(2)
   })
+
+  it('Should remove a favoriteId from favoriteIds', () => {
+    const newState = reducer({
+      favoriteIds: [1, 2],
+      movies: [],
+      loading: false
+    }, {
+      type: types.REMOVE_FAVORITE,
+      payload: 1
+    })
+    expect(newState.loading).toBeFalsy();
+    expect(newState.error).toBeUndefined();
+    expect(newState.favoriteIds.length).toBe(1)
+  })
+
+  it('Should add a favoriteId from favoriteIds', () => {
+    const newState = reducer({
+      favoriteIds: [1, 2],
+      movies: [],
+      loading: false
+    }, {
+      type: types.ADD_FAVORITE,
+      payload: 3
+    })
+    expect(newState.loading).toBeFalsy();
+    expect(newState.error).toBeUndefined();
+    expect(newState.favoriteIds.length).toBe(3)
+  })
 })
