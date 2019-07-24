@@ -10,7 +10,7 @@
     flex-direction: row;
     background-color: white;
     height: 345px;
-    border-radius: 4px;
+    border-radius: 8px;
 
     .movie-thumbnail {
       height: 345px;
@@ -33,13 +33,16 @@
         padding: 0px;
         cursor: pointer;
         background: transparent;
+        .favorites-icon__img {
+          width: 58px;
+        }
       }
 
       .movie-thumbnail__img {
         height: 345px;
         width: 230px;
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
       }
     }
 

@@ -38,7 +38,7 @@ export class Movie extends Component {
                   this.props.addFavorite(this.props.movie)
                 }
                 }>
-                  <img src={addFavoritesIcon} alt="Add favorites button" />
+                  <img src={addFavoritesIcon} className="favorites-icon__img" alt="Add favorites button" />
                 </button>
               )}
             </Mutation>}
@@ -49,7 +49,7 @@ export class Movie extends Component {
                   removeFavorite({ variables: { movieId: this.props.movie.id } })
                   this.props.removeFavorite(this.props.movie.id)
                 }}>
-                  <img src={removeFavoritesIcon} alt="Remove favorites button" />
+                  <img src={removeFavoritesIcon} className="favorites-icon__img" alt="Remove favorites button" />
                 </button>
               )}
             </Mutation>}
