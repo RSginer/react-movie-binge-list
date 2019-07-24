@@ -9,6 +9,8 @@ import calendar from './../../assets/icons/calendar_icon.svg';
 import addFavoritesIcon from './../../assets/icons/add_favorite.svg';
 import removeFavoritesIcon from './../../assets/icons/remove_favorite.svg';
 
+import PropTypes from 'prop-types';
+
 import './movie.scss';
 
 export class Movie extends Component {
@@ -90,6 +92,13 @@ export class Movie extends Component {
     )
   }
 
+}
+
+Movie.propTypes = {
+  medianRating: PropTypes.number,
+  movie: PropTypes.object,
+  removeFavorite: PropTypes.func,
+  addFavorite: PropTypes.func
 }
 
 export default Movie;
