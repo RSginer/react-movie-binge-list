@@ -70,6 +70,7 @@ describe('Favorites Component', () => {
       const props = {
         favorites: [],
         loading: true,
+        fetched: false,
         error: undefined,
         setupHeader: () => { },
         fetchFavorites: () => {},
@@ -99,6 +100,7 @@ describe('Favorites Component', () => {
     beforeEach(() => {
       const props = {
         favorites: [],
+        fetched: false,
         loading: false,
         error: {
           message: 'Error test'
@@ -130,6 +132,7 @@ describe('Favorites Component', () => {
     beforeEach(() => {
       const props = {
         loading: false,
+        fetched: true,
         error: undefined,
         favorites: favoritesMock,
         setupHeader: () => { },
