@@ -79,4 +79,49 @@ describe('Favorites reducer', () => {
     expect(newState.fetched).toBeTruthy();
     expect(newState.error).toBeUndefined();
   })
+
+  it('Should remove a movie from favorites', () => {
+    const newState = reducer({
+      favorites: moviesMock,
+      movies: [],
+      loading: false
+    }, {
+      type: types.REMOVE_FAVORITE,
+      payload: moviesMock[0].id
+    })
+    expect(newState.loading).toBeFalsy();
+    expect(newState.error).toBeUndefined();
+    expect(newState.favorites.length).toBe(moviesMock.length - 1)
+  })
+
+  it('Should add a movie to favorites', () => {
+    const newState = reducer({
+      favorites: moviesMock,
+      movies: [],
+      loading: false
+    }, {
+      type: types.ADD_FAVORITE,
+      payload:  {
+        id: 3,
+        title: 'Test title 3',
+        releaseYear: '2019',
+        overview: 'Test overview 3',
+        rating: 8,
+        genres: [
+          {
+            name: 'History',
+          },
+          {
+            name: 'Drama',
+          }
+        ],
+        poster: {
+          fullPath: 'https://image.tmdb.org/t/p/w342/noUp0XOqIcmgefRnRZa1nhtRvWO.jpg',
+        }
+      }
+    })
+    expect(newState.loading).toBeFalsy();
+    expect(newState.error).toBeUndefined();
+    expect(newState.favorites.length).toBe(moviesMock.length + 1)
+  })
 })
