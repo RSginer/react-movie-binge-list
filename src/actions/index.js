@@ -31,11 +31,11 @@ export const fetchMovies = (dispatch) => async (genre) => {
     if (response.errors) {
       throw new Error(response.errors[0].message);
     }
-    
-      dispatch({
-        type: types.FETCH_MOVIES_SUCCESS,
-        payload: response.data
-      })
+
+    dispatch({
+      type: types.FETCH_MOVIES_SUCCESS,
+      payload: response.data
+    })
   }).catch((err) => dispatch({
     type: types.FETCH_MOVIES_ERROR,
     payload: err
@@ -62,10 +62,10 @@ export const fetchFavorites = (dispatch) => async () => {
     if (response.errors) {
       throw new Error(response.errors[0].message);
     }
-      dispatch({
-        type: types.FETCH_FAVORITES_SUCCESS,
-        payload: response.data.favorites
-      })
+    dispatch({
+      type: types.FETCH_FAVORITES_SUCCESS,
+      payload: response.data.favorites
+    })
   }).catch((err) => dispatch({
     type: types.FETCH_FAVORITES_ERROR,
     payload: err
