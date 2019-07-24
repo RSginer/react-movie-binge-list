@@ -8,6 +8,12 @@ const cache = new InMemoryCache({
 
 export const client = new ApolloClient({
   link: createHttpLink({ uri: 'http://localhost:4000/graphql' }),
-  cache: cache
+  cache: cache,
+  defaultOptions: {
+    query: {
+      fetchPolicy: 'no-cache',
+      errorPolicy: 'all',
+    }
+  }
 });
 
