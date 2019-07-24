@@ -11,7 +11,7 @@ import Loading from './../../components/loading/loading';
 
 export class Favorites extends Component {
 
-  componentWillMount() {
+  async componentWillMount() {
     this.props.setupHeader({
       showBackButton: true,
       showFavoritesButton: false,
@@ -19,7 +19,7 @@ export class Favorites extends Component {
     });
 
     if (!this.props.fetched) {
-      this.props.fetchFavorites();
+      await this.props.fetchFavorites();
     }
   }
 

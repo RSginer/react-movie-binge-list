@@ -23,7 +23,7 @@ export default (state = {
         favoriteIds: action.payload.favorites.map((f) => f.id)
       }
     case types.CLEAR_MOVIES:
-      return { ...state, movies: action.payload, error: undefined, loading: false }
+      return { ...state, movies: action.payload, error: undefined, loading: false, filter: undefined }
     case types.REMOVE_FAVORITE:
       return { ...state, favoriteIds: removeFavorite(state.favoriteIds, action.payload) }
     case types.ADD_FAVORITE:

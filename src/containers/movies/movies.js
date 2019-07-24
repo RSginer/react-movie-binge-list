@@ -29,7 +29,7 @@ export class Movies extends Component {
 
   onSearchSubmit = async (e) => {
     if (this.state.searchInputValue.length > 0) {
-      this.props.fetchMovies(this.state.searchInputValue);
+      await this.props.fetchMovies(this.state.searchInputValue);
     } else {
       this.props.clearMovies();
     }

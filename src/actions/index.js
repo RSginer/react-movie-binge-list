@@ -22,12 +22,14 @@ export const fetchMovies = (dispatch) => async (genre) => {
     payload: g
   })
 
-  await client.query({
-    query: GET_ALL_MOVIES,
-    variables: {
-      genre: g
-    }
-  }).then((response) => {
+  try {
+    const response = await client.query({
+      query: GET_ALL_MOVIES,
+      variables: {
+        genre: g
+      }
+    })
+
     if (response.errors) {
       throw new Error(response.errors[0].message);
     }
@@ -36,10 +38,13 @@ export const fetchMovies = (dispatch) => async (genre) => {
       type: types.FETCH_MOVIES_SUCCESS,
       payload: response.data
     })
-  }).catch((err) => dispatch({
-    type: types.FETCH_MOVIES_ERROR,
-    payload: err
-  }))
+
+  } catch (err) {
+    dispatch({
+      type: types.FETCH_MOVIES_ERROR,
+      payload: err
+    })
+  }
 }
 
 export const clearMovies = (dispatch) => () => dispatch({
@@ -56,20 +61,26 @@ export const fetchFavorites = (dispatch) => async () => {
     type: types.FETCH_FAVORITES
   })
 
-  await client.query({
-    query: GET_FAVORITES
-  }).then((response) => {
+  try {
+    const response = await client.query({
+      query: GET_FAVORITES
+    });
+
     if (response.errors) {
       throw new Error(response.errors[0].message);
     }
+
     dispatch({
       type: types.FETCH_FAVORITES_SUCCESS,
       payload: response.data.favorites
     })
-  }).catch((err) => dispatch({
-    type: types.FETCH_FAVORITES_ERROR,
-    payload: err
-  }))
+
+  } catch (err) {
+    dispatch({
+      type: types.FETCH_FAVORITES_ERROR,
+      payload: err
+    })
+  }
 }
 
 export const removeFavorite = (dispatch) => (id) => dispatch({
