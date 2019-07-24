@@ -69,7 +69,10 @@ describe('Movies Component', () => {
   describe('Fetch initial query and render loader', () => {
     let component;
 
+    let setupHeader;
+
     beforeEach(() => {
+      setupHeader = jest.fn();
       const props = {
         filter: undefined,
         medianRating: undefined,
@@ -77,7 +80,7 @@ describe('Movies Component', () => {
         loading: true,
         error: undefined,
         favoriteIds: [],
-        setupHeader: () => { }
+        setupHeader: setupHeader
       }
       component = mount(
         <Movies.WrappedComponent {...props} />
@@ -86,6 +89,7 @@ describe('Movies Component', () => {
 
     it('Should render', () => {
       const wrapper = findByTestAttr(component, 'moviesComponent');
+      expect(setupHeader.mock.calls.length).toBe(1);
       expect(wrapper.length).toBe(1);
     });
 
