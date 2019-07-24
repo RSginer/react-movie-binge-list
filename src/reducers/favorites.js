@@ -9,7 +9,7 @@ export default (state = {
   switch (action.type) {
     case types.FETCH_FAVORITES:
       return { ...state, loading: true, favorites: [], error: undefined }
-    case types.FETCH_MOVIES_ERROR:
+    case types.FETCH_FAVORITES_ERROR:
       return { ...state, loading: false, error: action.payload, favorites: [] }
     case types.FETCH_FAVORITES_SUCCESS:
       return { ...state, loading: false, favorites: action.payload, error: undefined, fetched: true }
