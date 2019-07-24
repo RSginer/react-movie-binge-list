@@ -3,7 +3,6 @@ import { gql } from "apollo-boost";
 /**
  * Queries
  */
-
 export const GET_FAVORITES = gql`
 query getFavorites {
   favorites {
