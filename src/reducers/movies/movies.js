@@ -1,4 +1,4 @@
-import { types } from '../actions/types';
+import { types } from '../../actions/types';
 
 export default (state = {
   filter: undefined,
