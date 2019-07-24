@@ -3,7 +3,7 @@ import Loading from './loading';
 import { findByTestAttr } from './../../../utils/test';
 import { shallow } from 'enzyme';
 
-describe('EmptyMessage Component', () => {
+describe('Loading Component', () => {
   let component;
 
   beforeEach(() => {
