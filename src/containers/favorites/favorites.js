@@ -32,7 +32,7 @@ export class Favorites extends Component {
       <section className="movies-container__movies-list" data-test="favoritesComponent">
         {this.props.loading && !this.props.error && <Loading />}
         {this.props.error && <ServerError message={this.props.error.message} />}
-        {this.props.favorites.map((f, i) => <Movie
+        {!this.props.error && !this.props.loading && this.props.favorites.map((f, i) => <Movie
           key={i}
           movie={f} isFavorite={true}
           removeFavorite={this.removeFavorite}
