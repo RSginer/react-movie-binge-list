@@ -2,6 +2,8 @@
 
 ## My Binge List
 
+<img style="width: 700px" src="https://github.com/RSginer/react-movie-binge-list/blob/master/public/screenhot-desktop.png?raw=true">
+
 ### `yarn run deploy`
 
 Creates a docker image with the app bundles inside a NGINX server runing and starts GraphQL server.
