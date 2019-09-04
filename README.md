@@ -2,6 +2,8 @@
 
 ## My Binge List
 
+Demo: https://rsginer-my-binge-list.netlify.com/
+
 <img style="width: 700px" src="https://github.com/RSginer/react-movie-binge-list/blob/master/public/screenhot-desktop.png?raw=true">
 
 ### `yarn run deploy`
