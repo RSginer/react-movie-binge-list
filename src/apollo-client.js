@@ -7,7 +7,7 @@ const cache = new InMemoryCache({
 });
 
 export const client = new ApolloClient({
-  link: createHttpLink({ uri: 'http://movie-service-my-binge-list.herokuapp.com/graphql' }),
+  link: createHttpLink({ uri: 'https://movie-service-my-binge-list.herokuapp.com/graphql' }),
   cache: cache,
   defaultOptions: {
     query: {
